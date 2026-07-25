@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-04-28T17:29:35.703325" rpa="false" schemaversion="5">
+<suite id="s1" name="Fulfillment Center" source="E:\selenium project\kas\MS_Dashboard_Automation_.COM\Fulfillment\Fulfillment_Center.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>../screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-04-28T17:29:36.241449" elapsed="0.000304"/>
+</kw>
+<kw name="Login Setup" owner="Common_Keywords">
+<kw name="Open Application" owner="Common_Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Opening ${url}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:29:36.242749" elapsed="0.000960"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:29:36.245067" level="INFO">Opening browser 'chrome' to base url 'https://dashboard.mysellercentral.com/sign-in'.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-28T17:29:36.244385" elapsed="32.710975"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-28T17:30:08.955964" elapsed="0.100655"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-04-28T17:30:09.056973" elapsed="0.001898"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PAGE_HEADING}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:30:09.059156" elapsed="0.065659"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Page loaded successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:09.125215" elapsed="0.001103"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2026-04-28T17:29:36.242502" elapsed="32.884144"/>
+</kw>
+<kw name="Enter Login Credentials And Submit" owner="Common_Keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:30:09.130373" elapsed="0.054386"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:09.186508" level="INFO">Typing text 'ketan.bhagwate@gmail.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:30:09.185608" elapsed="0.599976"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:09.786597" level="INFO">Typing text '++Pass@123' into text field 'xpath=//input[@type='password']'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:30:09.786027" elapsed="0.237148"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>id=preloader</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-28T17:30:10.023704" elapsed="0.043463"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:10.068353" level="INFO">Clicking element 'xpath=//button[normalize-space()='Continue']'.</msg>
+<arg>${CONTINUE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:30:10.067739" elapsed="0.323535"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Continue Button Visible and Click</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:10.391672" elapsed="0.001708"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Login Success</arg>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:10.393938" elapsed="2.897038"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Login successful with email: ${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:13.291643" elapsed="0.001758"/>
+</kw>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-04-28T17:30:09.127818" elapsed="4.166024"/>
+</kw>
+<arg>https://dashboard.mysellercentral.com/sign-in</arg>
+<arg>ketan.bhagwate@gmail.com</arg>
+<arg>++Pass@123</arg>
+<status status="PASS" start="2026-04-28T17:29:36.242056" elapsed="37.052251"/>
+</kw>
+<arg>Set Screenshot Directory</arg>
+<arg>../screenshots</arg>
+<arg>AND</arg>
+<arg>Login Setup</arg>
+<arg>https://dashboard.mysellercentral.com/sign-in</arg>
+<arg>ketan.bhagwate@gmail.com</arg>
+<arg>++Pass@123</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-28T17:29:36.240513" elapsed="37.054087"/>
+</kw>
+<test id="s1-t1" name="1.Verify Login ,Verify Dashboard,Verify MSC Intelligence" line="18">
+<kw name="Verify Dashboard Redirection" owner="Common_Keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Home</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:13.299533" elapsed="6.242504"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Logged in successfully and Dashboard loaded</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:19.542450" elapsed="0.002443"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:30:13.298640" elapsed="6.246655"/>
+</kw>
+<kw name="Verify MSC Intelligence popup Open and Close" owner="Common_Keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>MSC Intelligence</arg>
+<arg>30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:19.549439" elapsed="3.619488"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_CLOSE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:30:23.169410" elapsed="0.312153"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:23.482770" level="INFO">Clicking element 'xpath=//*[name()='svg' and contains(@class, 'text-xl')]'.</msg>
+<arg>${BTN_CLOSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:30:23.482024" elapsed="0.264948"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Close button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:23.747609" elapsed="0.002361"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:30:19.548279" elapsed="4.201944"/>
+</kw>
+<kw name="Open MSC Intelligence And Verify Insights" owner="Common_Keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:23.789323" level="INFO">Current page contains element 'xpath=//button[.//span[normalize-space()='MSC Intelligence']]'.</msg>
+<arg>${MSC_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:23.757228" elapsed="0.032249"/>
+</kw>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${MSC_BUTTON}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-28T17:30:23.755656" elapsed="0.033998"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:23.790285" level="INFO">Clicking element 'xpath=//button[.//span[normalize-space()='MSC Intelligence']]'.</msg>
+<arg>${MSC_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:30:23.789952" elapsed="0.210932"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>MSC Intelligence</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:24.001531" elapsed="0.489397"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>MSC Intelligence button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:24.491426" elapsed="0.001530"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:30:23.754453" elapsed="0.738867"/>
+</kw>
+<kw name="Verify MSC Intelligence popup Open and Close" owner="Common_Keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>MSC Intelligence</arg>
+<arg>30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:24.497318" elapsed="0.039984"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_CLOSE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:30:24.538008" elapsed="0.063567"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:24.602480" level="INFO">Clicking element 'xpath=//*[name()='svg' and contains(@class, 'text-xl')]'.</msg>
+<arg>${BTN_CLOSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:30:24.601967" elapsed="0.233795"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Close button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:24.836530" elapsed="0.002338"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:30:24.496326" elapsed="0.342959"/>
+</kw>
+<kw name="Verify Page Load" owner="Common_Keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:34.907168" level="INFO">Current page does not contain element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:24.848537" elapsed="10.058899"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:34.939563" level="INFO">Current page contains element 'xpath=//*[name()='svg' or name()='canvas']'.</msg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:34.907898" elapsed="0.031896"/>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-28T17:30:24.845415" elapsed="10.094604"/>
+</kw>
+<arg>50s</arg>
+<arg>2s</arg>
+<arg>Run Keywords</arg>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-28T17:30:24.842996" elapsed="10.097227"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:30:24.842064" elapsed="10.098389"/>
+</kw>
+<doc>Verify successful login, dashboard redirection, MSC Intelligence popup functionality,
+and validate insights along with page load.</doc>
+<status status="PASS" start="2026-04-28T17:30:13.295358" elapsed="21.645801"/>
+</test>
+<test id="s1-t2" name="2.Validate Fulfillment Navigation" line="27">
+<kw name="Open Page From Sidebar" owner="Common_Keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:30:34.946719" elapsed="0.038445"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T17:30:34.985556" elapsed="0.300928"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:35.287613" level="INFO">Clicking element 'xpath=//button[.//span[normalize-space()='Fulfillment']]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:30:35.287003" elapsed="0.128241"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:35.415600" elapsed="0.001008"/>
+</kw>
+<arg>${FULFILLMENT_LABEL}</arg>
+<arg>Fulfillment</arg>
+<status status="PASS" start="2026-04-28T17:30:34.945937" elapsed="0.470890"/>
+</kw>
+<kw name="Open Page From Fulfillment" owner="Fulfillment_Keyword">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:30:35.419871" elapsed="0.036732"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T17:30:35.456955" elapsed="0.295908"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:35.753816" level="INFO">Clicking element 'xpath=//a[@href='/fulfillment-center' and normalize-space()='Fulfillment Center']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:30:35.753254" elapsed="0.159510"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:35.913507" elapsed="0.033288"/>
+</kw>
+<arg>${FULFILLMENT_CENTER_LINK}</arg>
+<arg>Fulfillment Center Link visible on dashboard</arg>
+<status status="PASS" start="2026-04-28T17:30:35.419073" elapsed="0.528188"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:30:34.944443" elapsed="1.005562"/>
+</test>
+<test id="s1-t3" name="4.Verify Fulfillment Center Page load" line="35">
+<kw name="Verify Page Load" owner="Common_Keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:37.992664" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-351.png"&gt;&lt;img src="../screenshots/selenium-screenshot-351.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T17:30:37.993053" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T17:30:35.956602" elapsed="2.045866">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T17:30:35.955790" elapsed="2.046972">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:40.231512" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-352.png"&gt;&lt;img src="../screenshots/selenium-screenshot-352.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T17:30:40.231857" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T17:30:40.004940" elapsed="0.229945">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T17:30:40.003882" elapsed="0.231324">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:52.297577" level="INFO">Current page does not contain element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:42.237220" elapsed="10.060558"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:30:52.316167" level="INFO">Current page contains element 'xpath=//*[name()='svg' or name()='canvas']'.</msg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:52.298151" elapsed="0.018181"/>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-28T17:30:42.236217" elapsed="10.080276"/>
+</kw>
+<arg>50s</arg>
+<arg>2s</arg>
+<arg>Run Keywords</arg>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-28T17:30:35.954580" elapsed="16.362062"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:30:35.953992" elapsed="16.362874"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Fulfillment Center page fully loaded</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:52.317833" elapsed="0.001458"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Fulfillment Center</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:30:52.321328" elapsed="0.026273"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Fulfillment Center page loaded successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:30:52.348595" elapsed="0.031618"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:30:35.952681" elapsed="16.429587"/>
+</test>
+<test id="s1-t4" name="5.Verify Fulfillment Center Cards" line="48">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class,'loader')]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-28T17:30:52.386865" elapsed="10.033641"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//div[contains(@class,'loader')]</arg>
+<arg>20s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-04-28T17:30:52.386142" elapsed="10.034577"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:02.422304" elapsed="10.069719"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]</arg>
+<arg>30s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-04-28T17:31:02.421519" elapsed="10.070729"/>
+</kw>
+<kw name="Validate Cards" owner="Common_Keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T17:31:12.494717" elapsed="0.291276"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:12.786346" elapsed="0.034836"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} Card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:31:12.821525" elapsed="0.001285"/>
+</kw>
+<arg>${CANCELED_CARD}</arg>
+<arg>Canceled</arg>
+<status status="PASS" start="2026-04-28T17:31:12.493259" elapsed="0.329985"/>
+</kw>
+<kw name="Validate Cards" owner="Common_Keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T17:31:12.825843" elapsed="0.304218"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:13.130517" elapsed="0.032604"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} Card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:31:13.163550" elapsed="0.001165"/>
+</kw>
+<arg>${PENDING_CARD}</arg>
+<arg>Pending</arg>
+<status status="PASS" start="2026-04-28T17:31:12.825030" elapsed="0.339997"/>
+</kw>
+<kw name="Validate Cards" owner="Common_Keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T17:31:13.167473" elapsed="0.297862"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:13.465751" elapsed="0.033661"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} Card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:31:13.499751" elapsed="0.001194"/>
+</kw>
+<arg>${SHIPPED_CARD}</arg>
+<arg>Shipped</arg>
+<status status="PASS" start="2026-04-28T17:31:13.166714" elapsed="0.334491"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:30:52.384623" elapsed="21.118260"/>
+</test>
+<test id="s1-t5" name="6.Verify New Orders Table" line="65">
+<kw name="Check Table Empty Or Data" owner="Common_Keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:31:23.820567" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-353.png"&gt;&lt;img src="../screenshots/selenium-screenshot-353.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T17:31:23.820863" level="FAIL">Element 'xpath=//div[text()='New Orders']/ancestor::div[contains(@class,'chart-bg')]//div[@class='py-3']//div[text()='No Records Found']' not visible after 5 seconds.</msg>
+<arg>${empty_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-04-28T17:31:13.508922" elapsed="10.315105">Element 'xpath=//div[text()='New Orders']/ancestor::div[contains(@class,'chart-bg')]//div[@class='py-3']//div[text()='No Records Found']' not visible after 5 seconds.</status>
+</kw>
+<msg time="2026-04-28T17:31:23.824340" level="INFO">${empty} = False</msg>
+<var>${empty}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${empty_locator}</arg>
+<arg>5s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-28T17:31:13.508213" elapsed="10.316241"/>
+</kw>
+<if>
+<branch type="IF" condition="${empty}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>⚠️ Table is EMPTY</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-28T17:31:23.825418" elapsed="0.000070"/>
+</kw>
+<status status="NOT RUN" start="2026-04-28T17:31:23.824861" elapsed="0.000750"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${table_locator}</arg>
+<arg>7s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:23.825902" elapsed="0.032171"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Table has DATA</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:31:23.858713" elapsed="0.036327"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:31:23.825709" elapsed="0.069542"/>
+</branch>
+<status status="PASS" start="2026-04-28T17:31:23.824757" elapsed="0.070626"/>
+</if>
+<arg>${NEW_ORDERS_TABLE_EMPTY}</arg>
+<arg>${NEW_ORDERS_TABLE_DATA}</arg>
+<status status="PASS" start="2026-04-28T17:31:13.507434" elapsed="10.388110"/>
+</kw>
+<kw name="Search And Validate" owner="Fulfillment_Keyword">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:31:34.122100" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-354.png"&gt;&lt;img src="../screenshots/selenium-screenshot-354.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T17:31:34.122463" level="FAIL">Element with locator 'xpath=//div[text()='New Orders']/ancestor::div[contains(@class,'chart-bg')]//div[@class='py-3']//div[text()='No Records Found']' not found.</msg>
+<arg>${no_record}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-04-28T17:31:23.899566" elapsed="10.230482">Element with locator 'xpath=//div[text()='New Orders']/ancestor::div[contains(@class,'chart-bg')]//div[@class='py-3']//div[text()='No Records Found']' not found.</status>
+</kw>
+<msg time="2026-04-28T17:31:34.130570" level="INFO">${table_empty} = False</msg>
+<var>${table_empty}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${no_record}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-28T17:31:23.898815" elapsed="10.231873"/>
+</kw>
+<if>
+<branch type="IF" condition="${table_empty}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Table is empty. Search will not be performed.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-28T17:31:34.131500" elapsed="0.000104"/>
+</kw>
+<status status="NOT RUN" start="2026-04-28T17:31:34.131015" elapsed="0.000709"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:34.132212" elapsed="0.042286"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:31:34.174947" elapsed="0.110511"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:31:34.286659" level="INFO">Typing text 'S02-6437131-2191131' into text field 'id=default-search'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:31:34.286007" elapsed="0.196951"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:31:34.484312" level="INFO">Sending key(s) ('ENTER',) to id=default-search element.</msg>
+<msg time="2026-04-28T17:31:34.806381" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-04-28T17:31:34.806630" level="INFO">Releasing special key ENTER.</msg>
+<arg>${locator}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-04-28T17:31:34.483477" elapsed="0.339927"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-28T17:31:36.825280" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-28T17:31:34.823851" elapsed="2.001700"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:31:36.897001" level="INFO">Element 'xpath=//div[.//div[normalize-space()='New Orders']]//table[.//thead and not(.//tbody//tr)]' is displayed.</msg>
+<arg>${empty_search}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:36.827123" elapsed="0.069964"/>
+</kw>
+<msg time="2026-04-28T17:31:36.897317" level="INFO">${no_data_after_search} = True</msg>
+<var>${no_data_after_search}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${empty_search}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-28T17:31:36.826109" elapsed="0.071270"/>
+</kw>
+<if>
+<branch type="IF" condition="${no_data_after_search}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>No data found after search</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:31:36.897955" elapsed="0.001066"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:31:36.897590" elapsed="0.001581"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${result}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-28T17:31:36.899660" elapsed="0.000073"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${result}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-04-28T17:31:36.899953" elapsed="0.000054"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>${result}</arg>
+<arg>${text}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2026-04-28T17:31:36.900330" elapsed="0.000110"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Data found and validated successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-28T17:31:36.900790" elapsed="0.000111"/>
+</kw>
+<status status="NOT RUN" start="2026-04-28T17:31:36.899322" elapsed="0.001793"/>
+</branch>
+<status status="PASS" start="2026-04-28T17:31:36.897538" elapsed="0.003768"/>
+</if>
+<status status="PASS" start="2026-04-28T17:31:34.131856" elapsed="2.769544"/>
+</branch>
+<status status="PASS" start="2026-04-28T17:31:34.130943" elapsed="2.770550"/>
+</if>
+<arg>${SEARCH_BOX}</arg>
+<arg>S02-6437131-2191131</arg>
+<arg>${RESULT_TEXT}</arg>
+<arg>${NEW_ORDERS_TABLE_EMPTY}</arg>
+<arg>${EMPTY_SEARCH_NEW_ORDERS}</arg>
+<status status="PASS" start="2026-04-28T17:31:23.897664" elapsed="13.004031"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:31:13.505115" elapsed="23.397371"/>
+</test>
+<test id="s1-t6" name="7.Verify In Process" line="69">
+<kw name="Open Tab And Verify" owner="Common_Keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${tab_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T17:31:36.908314" elapsed="0.318368"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${tab_locator}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:37.227276" elapsed="0.041366"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:31:37.269409" level="INFO">Clicking element 'xpath=//span[normalize-space()='In Process']'.</msg>
+<arg>${tab_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:31:37.268988" elapsed="0.143049"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${expected_text}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:31:37.413287" elapsed="0.026910"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${expected_text} Tab loaded successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:31:37.440600" elapsed="0.001167"/>
+</kw>
+<arg>${IN_PROCESS_TAB}</arg>
+<arg>In Process</arg>
+<status status="PASS" start="2026-04-28T17:31:36.907511" elapsed="0.534492"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class,'loader')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:37.445094" elapsed="10.074301"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:47.520174" elapsed="10.068837"/>
+</kw>
+<kw name="Validate Tables" owner="Common_Keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T17:31:57.591434" elapsed="0.305655"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:57.897522" elapsed="0.037891"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} table visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:31:57.935754" elapsed="0.001220"/>
+</kw>
+<arg>${MULTI_CHANNEL_IN_PROCESS_ORDERS_TABLE_CARD}</arg>
+<arg>In Process Orders</arg>
+<status status="PASS" start="2026-04-28T17:31:57.590229" elapsed="0.347005"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:31:36.906155" elapsed="21.033635"/>
+</test>
+<test id="s1-t7" name="8.Verify Tracking Details" line="76">
+<kw name="Open Tab And Verify" owner="Common_Keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${tab_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T17:31:57.945914" elapsed="0.297720"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${tab_locator}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:58.244104" elapsed="0.032704"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:31:58.277955" level="INFO">Clicking element 'xpath=//span[normalize-space()='Tracking Details']'.</msg>
+<arg>${tab_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:31:58.277243" elapsed="0.132495"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${expected_text}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T17:31:58.410177" elapsed="0.021962"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${expected_text} Tab loaded successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:31:58.432543" elapsed="0.001198"/>
+</kw>
+<arg>${TRACKING_TAB}</arg>
+<arg>Tracking Details</arg>
+<status status="PASS" start="2026-04-28T17:31:57.945246" elapsed="0.488701"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class,'loader')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-28T17:31:58.436010" elapsed="10.054695"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-28T17:32:08.491624" elapsed="10.013283"/>
+</kw>
+<kw name="Validate Tables" owner="Common_Keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T17:32:18.507004" elapsed="0.291577"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:32:18.799021" elapsed="0.033784"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} table visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:32:18.833188" elapsed="0.001357"/>
+</kw>
+<arg>${MULTI_CHANNEL_COMPLETED_ORDERS_TABLE_CARD}</arg>
+<arg>Completed Orders</arg>
+<status status="PASS" start="2026-04-28T17:32:18.506088" elapsed="0.328719"/>
+</kw>
+<kw name="Check Table Empty Or Data" owner="Common_Keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:32:29.166811" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-355.png"&gt;&lt;img src="../screenshots/selenium-screenshot-355.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T17:32:29.167347" level="FAIL">Element 'xpath=//div[normalize-space()='Completed Orders']/ancestor::div[contains(@class,'chart-bg')]//div[@class='py-3']//div[text()='No Records Found']' not visible after 5 seconds.</msg>
+<arg>${empty_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-04-28T17:32:18.839223" elapsed="10.330271">Element 'xpath=//div[normalize-space()='Completed Orders']/ancestor::div[contains(@class,'chart-bg')]//div[@class='py-3']//div[text()='No Records Found']' not visible after 5 seconds.</status>
+</kw>
+<msg time="2026-04-28T17:32:29.169966" level="INFO">${empty} = False</msg>
+<var>${empty}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${empty_locator}</arg>
+<arg>5s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-28T17:32:18.838464" elapsed="10.331647"/>
+</kw>
+<if>
+<branch type="IF" condition="${empty}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>⚠️ Table is EMPTY</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-28T17:32:29.171100" elapsed="0.000057"/>
+</kw>
+<status status="NOT RUN" start="2026-04-28T17:32:29.170646" elapsed="0.000581"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${table_locator}</arg>
+<arg>7s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:32:29.171647" elapsed="0.030832"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Table has DATA</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:32:29.202826" elapsed="0.001272"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:32:29.171310" elapsed="0.032994"/>
+</branch>
+<status status="PASS" start="2026-04-28T17:32:29.170461" elapsed="0.033937"/>
+</if>
+<arg>${MULTI_CHANNEL_COMPLETED_ORDERS_TABLE_EMPTY}</arg>
+<arg>${MULTI_CHANNEL_COMPLETED_ORDERS_TABLE_DATA}</arg>
+<status status="PASS" start="2026-04-28T17:32:18.837163" elapsed="10.367379"/>
+</kw>
+<kw name="Search And Validate" owner="Fulfillment_Keyword">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:32:39.410294" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-356.png"&gt;&lt;img src="../screenshots/selenium-screenshot-356.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T17:32:39.410651" level="FAIL">Element with locator 'xpath=//div[normalize-space()='Completed Orders']/ancestor::div[contains(@class,'chart-bg')]//div[@class='py-3']//div[text()='No Records Found']' not found.</msg>
+<arg>${no_record}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-04-28T17:32:29.209745" elapsed="10.203348">Element with locator 'xpath=//div[normalize-space()='Completed Orders']/ancestor::div[contains(@class,'chart-bg')]//div[@class='py-3']//div[text()='No Records Found']' not found.</status>
+</kw>
+<msg time="2026-04-28T17:32:39.413435" level="INFO">${table_empty} = False</msg>
+<var>${table_empty}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${no_record}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-28T17:32:29.209071" elapsed="10.204421"/>
+</kw>
+<if>
+<branch type="IF" condition="${table_empty}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Table is empty. Search will not be performed.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-28T17:32:39.413964" elapsed="0.000067"/>
+</kw>
+<status status="NOT RUN" start="2026-04-28T17:32:39.413674" elapsed="0.000400"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:32:39.414228" elapsed="0.032553"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:32:39.446979" elapsed="0.088318"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:32:39.535835" level="INFO">Typing text '403-4606308-4193149' into text field 'id=default-search'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T17:32:39.535527" elapsed="0.202436"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:32:39.738883" level="INFO">Sending key(s) ('ENTER',) to id=default-search element.</msg>
+<msg time="2026-04-28T17:32:40.036267" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-04-28T17:32:40.036382" level="INFO">Releasing special key ENTER.</msg>
+<arg>${locator}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-04-28T17:32:39.738232" elapsed="0.315646"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-28T17:32:42.055147" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-28T17:32:40.054113" elapsed="2.001249"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-04-28T17:32:43.829494" level="INFO">Element 'xpath=//div[.//div[normalize-space()='Completed Orders']]//div[text()='No Records Found']' is displayed.</msg>
+<arg>${empty_search}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T17:32:42.056484" elapsed="1.773159"/>
+</kw>
+<msg time="2026-04-28T17:32:43.829868" level="INFO">${no_data_after_search} = True</msg>
+<var>${no_data_after_search}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${empty_search}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-28T17:32:42.055847" elapsed="1.774077"/>
+</kw>
+<if>
+<branch type="IF" condition="${no_data_after_search}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>No data found after search</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T17:32:43.830377" elapsed="0.000813"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:32:43.830096" elapsed="0.001228"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${result}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-28T17:32:43.831695" elapsed="0.000112"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${result}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-04-28T17:32:43.832210" elapsed="0.000089"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>${result}</arg>
+<arg>${text}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2026-04-28T17:32:43.832635" elapsed="0.000084"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Data found and validated successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-28T17:32:43.833022" elapsed="0.000098"/>
+</kw>
+<status status="NOT RUN" start="2026-04-28T17:32:43.831404" elapsed="0.001848"/>
+</branch>
+<status status="PASS" start="2026-04-28T17:32:43.830056" elapsed="0.003311"/>
+</if>
+<status status="PASS" start="2026-04-28T17:32:39.414117" elapsed="4.419333"/>
+</branch>
+<status status="PASS" start="2026-04-28T17:32:39.413626" elapsed="4.419910"/>
+</if>
+<arg>${SEARCH_BOX}</arg>
+<arg>403-4606308-4193149</arg>
+<arg>${RESULT_TEXT}</arg>
+<arg>${MULTI_CHANNEL_COMPLETED_ORDERS_TABLE_EMPTY}</arg>
+<arg>${EMPTY_SEARCH_Tracking Details}</arg>
+<status status="PASS" start="2026-04-28T17:32:29.208139" elapsed="14.625559"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:31:57.942326" elapsed="45.892016"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-28T17:32:43.838015" elapsed="2.469740"/>
+</kw>
+<status status="PASS" start="2026-04-28T17:29:35.825514" elapsed="190.482558"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Fulfillment Center" id="s1" pass="7" fail="0" skip="0">Fulfillment Center</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

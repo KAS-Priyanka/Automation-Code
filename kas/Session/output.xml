@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-04-22T17:50:57.681647" rpa="false" schemaversion="5">
+<suite id="s1" name="Session" source="E:\selenium project\kas\MS_Dashboard_Automation\Session\Session.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Disable Screenshots" owner="Session_Keywords">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-04-22T17:50:58.254732" elapsed="0.000309"/>
+</kw>
+<status status="PASS" start="2026-04-22T17:50:58.254324" elapsed="0.000867"/>
+</kw>
+<kw name="Login Setup" owner="Session_Keywords">
+<kw name="Open Application" owner="Session_Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Opening ${url}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:50:58.256605" elapsed="0.000871"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:50:58.258468" level="INFO">Opening browser 'chrome' to base url 'https://mysellercentral.online/sign-in'.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-22T17:50:58.257776" elapsed="6.016552"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-22T17:51:04.274570" elapsed="0.024983"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-04-22T17:51:04.299881" elapsed="0.004077"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PAGE_HEADING}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:04.304308" elapsed="0.050152"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Page loaded successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:04.354988" elapsed="0.102087"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2026-04-22T17:50:58.256353" elapsed="6.201361"/>
+</kw>
+<kw name="Enter Login Credentials And Submit" owner="Session_Keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:04.460135" elapsed="0.027095"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:04.488385" level="INFO">Typing text 'mayuresh.adititoys@gmail.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:04.487638" elapsed="0.302424"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:04.792119" level="INFO">Typing text '++Pass@123' into text field 'xpath=//input[@type='password']'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:04.790511" elapsed="0.190404"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>id=preloader</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:04.981200" elapsed="1.200978"/>
+</kw>
+<kw name="Click Button" owner="Session_Keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:06.183360" elapsed="0.022533"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:06.206526" level="INFO">Clicking element 'xpath=//button[normalize-space()='Continue']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:06.206188" elapsed="0.097725"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} visible and clicked successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:06.304301" elapsed="0.001187"/>
+</kw>
+<arg>${CONTINUE_BTN}</arg>
+<arg>Continue clicked</arg>
+<status status="PASS" start="2026-04-22T17:51:06.182796" elapsed="0.122959"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:07.315008" level="INFO">Current page contains element 'xpath=//div[contains(.,'Login Success')]'.</msg>
+<arg>xpath=//div[contains(.,'Login Success')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-22T17:51:06.307065" elapsed="1.008069"/>
+</kw>
+<arg>5s</arg>
+<arg>0.5s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[contains(.,'Login Success')]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-22T17:51:06.306098" elapsed="1.009157"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Login successful with email: ${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:07.315460" elapsed="0.000789"/>
+</kw>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-04-22T17:51:04.458472" elapsed="2.857917"/>
+</kw>
+<arg>https://mysellercentral.online/sign-in</arg>
+<arg>mayuresh.adititoys@gmail.com</arg>
+<arg>++Pass@123</arg>
+<status status="PASS" start="2026-04-22T17:50:58.255936" elapsed="9.060582"/>
+</kw>
+<arg>Disable Screenshots</arg>
+<arg>AND</arg>
+<arg>Login Setup</arg>
+<arg>https://mysellercentral.online/sign-in</arg>
+<arg>mayuresh.adititoys@gmail.com</arg>
+<arg>++Pass@123</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-22T17:50:58.253045" elapsed="9.063606"/>
+</kw>
+<test id="s1-t1" name="1.Verify Session Page Loaded" line="16">
+<kw name="Disable Screenshots" owner="Session_Keywords">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-04-22T17:51:07.320610" elapsed="0.000733"/>
+</kw>
+<status status="PASS" start="2026-04-22T17:51:07.319114" elapsed="0.002409"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Commerce IQ</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-22T17:51:07.322252" elapsed="0.574501"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Session page loaded successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:07.897608" elapsed="0.001263"/>
+</kw>
+<status status="PASS" start="2026-04-22T17:51:07.316846" elapsed="0.583605"/>
+</test>
+<test id="s1-t2" name="2.Verify Wallet" line="21">
+<kw name="Verify Wallet Section" owner="Session_Keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${wallet_button}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:07.907929" elapsed="0.667686"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:08.602341" level="INFO">Element 'xpath=//span[normalize-space()='Wallet:']' is displayed.</msg>
+<arg>${wallet_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.575886" elapsed="0.026818"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:08.640533" level="INFO">${value} = ₹1408</msg>
+<var>${value}</var>
+<arg>${wallet_value}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.603174" elapsed="0.037449"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${value}</arg>
+<arg>₹</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.640854" elapsed="0.000724"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2026-04-22T17:51:08.642370" level="INFO">${value} = 1408</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<arg>₹</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.641876" elapsed="0.000564"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2026-04-22T17:51:08.643371" level="INFO">${value} = 1408</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.642702" elapsed="0.000734"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${value} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.643646" elapsed="0.000547"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Wallet balance is ₹${value} and is valid</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.644382" elapsed="0.000661"/>
+</kw>
+<arg>${WALLET_LABEL}</arg>
+<arg>${WALLET_VALUE}</arg>
+<status status="PASS" start="2026-04-22T17:51:07.906992" elapsed="0.738256"/>
+</kw>
+<status status="PASS" start="2026-04-22T17:51:07.904883" elapsed="0.742096"/>
+</test>
+<test id="s1-t3" name="4.Verify Commerce IQ Chat ,Commerce IQ Response And New Session" line="34">
+<kw name="Click Button" owner="Session_Keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.651444" elapsed="0.028720"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:08.680706" level="INFO">Clicking element 'xpath=//button//span[text()='Generate Listing']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.680428" elapsed="0.086870"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} visible and clicked successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.767544" elapsed="0.000946"/>
+</kw>
+<arg>${GENERATE_LISTING}</arg>
+<arg>Generate Listing button</arg>
+<status status="PASS" start="2026-04-22T17:51:08.650769" elapsed="0.117977"/>
+</kw>
+<kw name="Send Commerce IQ Query" owner="Session_Keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${chat_input}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.774814" elapsed="0.030014"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-22T17:51:10.806682" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-22T17:51:08.805057" elapsed="2.001765"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:10.807397" level="INFO">Typing text 'Give me the total number of returns for Amazon.in from 4 March 2026 to 2 April 2026.' into text field 'xpath=//textarea[contains(@class,'flex-1')]'.</msg>
+<arg>${chat_input}</arg>
+<arg>${query}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:10.807056" elapsed="0.404237"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Chat query entered successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.211706" elapsed="0.008327"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:11.222521" level="INFO">Sending key(s) ('ENTER',) to xpath=//textarea[contains(@class,'flex-1')] element.</msg>
+<msg time="2026-04-22T17:51:11.520354" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-04-22T17:51:11.520488" level="INFO">Releasing special key ENTER.</msg>
+<arg>${chat_input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.220951" elapsed="0.313905"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Query sent successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.535089" elapsed="0.001455"/>
+</kw>
+<arg>Give me the total number of returns for Amazon.in from 4 March 2026 to 2 April 2026.</arg>
+<arg>${CHAT_INPUT}</arg>
+<status status="PASS" start="2026-04-22T17:51:08.773258" elapsed="2.763719"/>
+</kw>
+<kw name="Commerce IQ Response" owner="Session_Keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:11.566774" level="INFO">Element 'xpath=//div[contains(@class,'rounded-2xl') and contains(@class,'shadow-sm') and contains(@class,'border')]' is displayed.</msg>
+<arg>${AI_LOADING}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.541318" elapsed="0.025578"/>
+</kw>
+<arg>120s</arg>
+<arg>2s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>${AI_LOADING}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.540328" elapsed="0.026661"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:11.592272" level="INFO">Element 'xpath=//div[@data-message-index='1']' is displayed.</msg>
+<arg>${AI_RESPONSE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.567637" elapsed="0.024780"/>
+</kw>
+<arg>120s</arg>
+<arg>2s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>${AI_RESPONSE}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.567186" elapsed="0.025325"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:11.610578" level="INFO">${response} = Give me the total number of returns for Amazon.in from 4 March 2026 to 2 April 2026.</msg>
+<var>${response}</var>
+<arg>${AI_RESPONSE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.592731" elapsed="0.017956"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2026-04-22T17:51:11.611126" level="INFO">${response_lower} = give me the total number of returns for amazon.in from 4 march 2026 to 2 april 2026.</msg>
+<var>${response_lower}</var>
+<arg>${response}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.610878" elapsed="0.000282"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2026-04-22T17:51:11.611512" level="INFO">${expected1} = returns</msg>
+<var>${expected1}</var>
+<arg>${expected_text1}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.611299" elapsed="0.000270"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2026-04-22T17:51:11.611856" level="INFO">${expected2} = amazon.in</msg>
+<var>${expected2}</var>
+<arg>${expected_text2}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.611691" elapsed="0.000194"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response_lower}</arg>
+<arg>${expected1}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.612052" elapsed="0.000386"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response_lower}</arg>
+<arg>${expected2}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.612568" elapsed="0.000345"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>AI Response Verified Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:11.613038" elapsed="0.000509"/>
+</kw>
+<arg>Returns</arg>
+<arg>Amazon.in</arg>
+<status status="PASS" start="2026-04-22T17:51:11.539618" elapsed="0.074096"/>
+</kw>
+<kw name="Validate Analysis Table" owner="Session_Keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:21.769955" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-714.png"&gt;&lt;img src="screenshots/selenium-screenshot-714.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-22T17:51:21.770739" level="FAIL">Element with locator 'xpath=//h2[text()='Analysis Table']' not found.</msg>
+<arg>${analysis_table}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="FAIL" start="2026-04-22T17:51:11.615644" elapsed="10.165285">Element with locator 'xpath=//h2[text()='Analysis Table']' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${analysis_table}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-22T17:51:21.781196" elapsed="0.000044"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${analysis_table}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-04-22T17:51:21.781392" elapsed="0.000028"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${export_btn}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-22T17:51:21.781518" elapsed="0.000026"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${export_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-04-22T17:51:21.781666" elapsed="0.000028"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Analysis Table Exported Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-22T17:51:21.781791" elapsed="0.000030"/>
+</kw>
+<arg>${ANALYSIS_TABLE}</arg>
+<arg>${EXPORT_BTN}</arg>
+<status status="FAIL" start="2026-04-22T17:51:11.615205" elapsed="10.166765">Element with locator 'xpath=//h2[text()='Analysis Table']' not found.</status>
+</kw>
+<kw name="Validate Wallet Balance In Response" owner="Session_Keywords">
+<arg>${WALLET_BALANCE_VALUE}</arg>
+<arg>${WALLET_VALUE}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.782625" elapsed="0.000048"/>
+</kw>
+<kw name="Create New Session" owner="Session_Keywords">
+<arg>${NEW_SESSION_BTN}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.783091" elapsed="0.000055"/>
+</kw>
+<kw name="Send Commerce IQ Query" owner="Session_Keywords">
+<arg>How many AI agents do we have?</arg>
+<arg>${CHAT_INPUT}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.783609" elapsed="0.000059"/>
+</kw>
+<kw name="Commerce IQ Response" owner="Session_Keywords">
+<arg>10 specialized AI agents</arg>
+<arg>Smart Listing Agent</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.784438" elapsed="0.000160"/>
+</kw>
+<kw name="Validate Wallet Balance In Response" owner="Session_Keywords">
+<arg>${WALLET_BALANCE_VALUE}</arg>
+<arg>${WALLET_VALUE}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.785957" elapsed="0.000213"/>
+</kw>
+<kw name="Create New Session" owner="Session_Keywords">
+<arg>${NEW_SESSION_BTN}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.787299" elapsed="0.000081"/>
+</kw>
+<kw name="Send Commerce IQ Query" owner="Session_Keywords">
+<arg>Give me the report for revenue, orders, order unit, returns, returns unit for today for amazon.in</arg>
+<arg>${CHAT_INPUT}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.787910" elapsed="0.000061"/>
+</kw>
+<kw name="Commerce IQ Response" owner="Session_Keywords">
+<arg>Revenue</arg>
+<arg>Orders</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.788512" elapsed="0.000073"/>
+</kw>
+<kw name="Validate Analysis Table" owner="Session_Keywords">
+<arg>${ANALYSIS_TABLE}</arg>
+<arg>${EXPORT_BTN}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.789104" elapsed="0.000070"/>
+</kw>
+<kw name="Validate Wallet Balance In Response" owner="Session_Keywords">
+<arg>${WALLET_BALANCE_VALUE}</arg>
+<arg>${WALLET_VALUE}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.789716" elapsed="0.000072"/>
+</kw>
+<kw name="Create New Session" owner="Session_Keywords">
+<arg>${NEW_SESSION_BTN}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.790257" elapsed="0.000083"/>
+</kw>
+<kw name="Send Commerce IQ Query" owner="Session_Keywords">
+<arg>Show the total list of connected marketplaces.</arg>
+<arg>${CHAT_INPUT}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.790796" elapsed="0.000079"/>
+</kw>
+<kw name="Validate Connected Marketplaces" owner="Session_Keywords">
+<status status="NOT RUN" start="2026-04-22T17:51:21.791390" elapsed="0.000052"/>
+</kw>
+<kw name="Validate Wallet Balance In Response" owner="Session_Keywords">
+<arg>${WALLET_BALANCE_VALUE}</arg>
+<arg>${WALLET_VALUE}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.792282" elapsed="0.000066"/>
+</kw>
+<kw name="Send Commerce IQ Query" owner="Session_Keywords">
+<arg>How many AI agents do we have?</arg>
+<arg>${CHAT_INPUT}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.792794" elapsed="0.000066"/>
+</kw>
+<kw name="Commerce IQ Response" owner="Session_Keywords">
+<arg>10 specialized AI agents</arg>
+<arg>Smart Listing Agent</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.793250" elapsed="0.000052"/>
+</kw>
+<kw name="Create New Session" owner="Session_Keywords">
+<arg>${NEW_SESSION_BTN}</arg>
+<status status="NOT RUN" start="2026-04-22T17:51:21.793805" elapsed="0.000099"/>
+</kw>
+<status status="FAIL" start="2026-04-22T17:51:08.649571" elapsed="13.144670">Element with locator 'xpath=//h2[text()='Analysis Table']' not found.</status>
+</test>
+<test id="s1-t4" name="5.Verify Commerce IQ Chat With Thinking Mode,Commerce IQ Response And New Session" line="86">
+<kw name="Send Commerce IQ Query With Thinking Mode" owner="Session_Keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:21.800148" level="INFO">Clicking element 'xpath=//span[contains(text(),'Thinking')]/ancestor::div[contains(@class,'cursor-pointer')]'.</msg>
+<arg>${thinking}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:21.799449" elapsed="0.091837"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${thinking}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-22T17:51:21.797971" elapsed="0.093509"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-22T17:51:23.892467" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-22T17:51:21.891755" elapsed="2.000860"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:23.893107" level="INFO">Typing text 'Give me Total Value of Inventory for Amazon.in' into text field 'xpath=//textarea[contains(@class,'flex-1')]'.</msg>
+<arg>${chat_input}</arg>
+<arg>${query}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:23.892818" elapsed="0.240203"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Chat query entered successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:24.133425" elapsed="0.001435"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:24.137542" level="INFO">Sending key(s) ('ENTER',) to xpath=//textarea[contains(@class,'flex-1')] element.</msg>
+<msg time="2026-04-22T17:51:24.434246" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-04-22T17:51:24.434349" level="INFO">Releasing special key ENTER.</msg>
+<arg>${chat_input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-04-22T17:51:24.136302" elapsed="0.312037"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Query sent successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:24.448594" elapsed="0.019889"/>
+</kw>
+<arg>${THINKING}</arg>
+<arg>${CHAT_INPUT}</arg>
+<arg>Give me Total Value of Inventory for Amazon.in</arg>
+<status status="PASS" start="2026-04-22T17:51:21.797109" elapsed="2.672160"/>
+</kw>
+<kw name="Send Commerce IQ Query With Thinking Mode" owner="Session_Keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:24.509769" level="INFO">Clicking element 'xpath=//span[contains(text(),'Thinking')]/ancestor::div[contains(@class,'cursor-pointer')]'.</msg>
+<arg>${thinking}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:24.509496" elapsed="0.072186"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${thinking}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-22T17:51:24.508854" elapsed="0.072946"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-22T17:51:26.582645" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-22T17:51:24.581989" elapsed="2.000787"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:26.583255" level="INFO">Typing text 'Give me Total no of Repeate Customers for Amazon.in' into text field 'xpath=//textarea[contains(@class,'flex-1')]'.</msg>
+<arg>${chat_input}</arg>
+<arg>${query}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:26.582976" elapsed="0.301861"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Chat query entered successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:26.885488" elapsed="0.005143"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:26.892166" level="INFO">Sending key(s) ('ENTER',) to xpath=//textarea[contains(@class,'flex-1')] element.</msg>
+<msg time="2026-04-22T17:51:27.208808" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-04-22T17:51:27.208891" level="INFO">Releasing special key ENTER.</msg>
+<arg>${chat_input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-04-22T17:51:26.891054" elapsed="0.333348"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Query sent successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:27.224692" elapsed="0.000811"/>
+</kw>
+<arg>${THINKING}</arg>
+<arg>${CHAT_INPUT}</arg>
+<arg>Give me Total no of Repeate Customers for Amazon.in</arg>
+<status status="PASS" start="2026-04-22T17:51:24.507919" elapsed="2.717824"/>
+</kw>
+<kw name="Send Commerce IQ Query With Thinking Mode" owner="Session_Keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:27.229341" level="INFO">Clicking element 'xpath=//span[contains(text(),'Thinking')]/ancestor::div[contains(@class,'cursor-pointer')]'.</msg>
+<arg>${thinking}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:27.229103" elapsed="0.085807"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${thinking}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-22T17:51:27.228497" elapsed="0.086548"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-22T17:51:29.316172" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-22T17:51:27.315225" elapsed="2.001079"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:29.316821" level="INFO">Typing text 'Give me Total Repeat Value for Amazon.in' into text field 'xpath=//textarea[contains(@class,'flex-1')]'.</msg>
+<arg>${chat_input}</arg>
+<arg>${query}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:29.316520" elapsed="0.203493"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Chat query entered successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:29.520375" elapsed="0.000895"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:29.522650" level="INFO">Sending key(s) ('ENTER',) to xpath=//textarea[contains(@class,'flex-1')] element.</msg>
+<msg time="2026-04-22T17:51:29.818773" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-04-22T17:51:29.819021" level="INFO">Releasing special key ENTER.</msg>
+<arg>${chat_input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-04-22T17:51:29.521682" elapsed="0.310315"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Query sent successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:29.832237" elapsed="0.000542"/>
+</kw>
+<arg>${THINKING}</arg>
+<arg>${CHAT_INPUT}</arg>
+<arg>Give me Total Repeat Value for Amazon.in</arg>
+<status status="PASS" start="2026-04-22T17:51:27.227823" elapsed="2.605075"/>
+</kw>
+<kw name="Send Commerce IQ Query With Thinking Mode" owner="Session_Keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:29.837697" level="INFO">Clicking element 'xpath=//span[contains(text(),'Thinking')]/ancestor::div[contains(@class,'cursor-pointer')]'.</msg>
+<arg>${thinking}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:29.837379" elapsed="0.072233"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${thinking}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-22T17:51:29.836291" elapsed="0.073450"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-22T17:51:31.910709" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-22T17:51:29.909928" elapsed="2.000955"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:31.911389" level="INFO">Typing text 'Give me inventory Total Storage Fees for Amazon.in' into text field 'xpath=//textarea[contains(@class,'flex-1')]'.</msg>
+<arg>${chat_input}</arg>
+<arg>${query}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:31.911084" elapsed="0.467297"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Chat query entered successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:32.379073" elapsed="0.000966"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:32.381006" level="INFO">Sending key(s) ('ENTER',) to xpath=//textarea[contains(@class,'flex-1')] element.</msg>
+<msg time="2026-04-22T17:51:32.681089" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-04-22T17:51:32.681216" level="INFO">Releasing special key ENTER.</msg>
+<arg>${chat_input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-04-22T17:51:32.380365" elapsed="0.332170"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Query sent successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:32.712852" elapsed="0.000756"/>
+</kw>
+<arg>${THINKING}</arg>
+<arg>${CHAT_INPUT}</arg>
+<arg>Give me inventory Total Storage Fees for Amazon.in</arg>
+<status status="PASS" start="2026-04-22T17:51:29.834879" elapsed="2.879334"/>
+</kw>
+<kw name="Send Commerce IQ Query With Thinking Mode" owner="Session_Keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:32.717668" level="INFO">Clicking element 'xpath=//span[contains(text(),'Thinking')]/ancestor::div[contains(@class,'cursor-pointer')]'.</msg>
+<arg>${thinking}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:32.717322" elapsed="0.080449"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${thinking}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-22T17:51:32.716658" elapsed="0.081262"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-22T17:51:34.798853" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-22T17:51:32.798126" elapsed="2.000914"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:34.799579" level="INFO">Typing text 'Give me Total Suppressed Listings for Amazon.in' into text field 'xpath=//textarea[contains(@class,'flex-1')]'.</msg>
+<arg>${chat_input}</arg>
+<arg>${query}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:34.799256" elapsed="0.362179"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Chat query entered successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:35.161822" elapsed="0.009743"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:35.173041" level="INFO">Sending key(s) ('ENTER',) to xpath=//textarea[contains(@class,'flex-1')] element.</msg>
+<msg time="2026-04-22T17:51:35.480637" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-04-22T17:51:35.480749" level="INFO">Releasing special key ENTER.</msg>
+<arg>${chat_input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-04-22T17:51:35.172011" elapsed="0.344408"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Query sent successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:35.516753" elapsed="0.001227"/>
+</kw>
+<arg>${THINKING}</arg>
+<arg>${CHAT_INPUT}</arg>
+<arg>Give me Total Suppressed Listings for Amazon.in</arg>
+<status status="PASS" start="2026-04-22T17:51:32.716058" elapsed="2.802188"/>
+</kw>
+<status status="PASS" start="2026-04-22T17:51:21.795795" elapsed="13.724200"/>
+</test>
+<test id="s1-t5" name="7.Verify Session History" line="140">
+<kw name="Click Button" owner="Session_Keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:35.525941" elapsed="0.031873"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:35.558291" level="INFO">Clicking element 'xpath=//button[.//div[normalize-space()='New Session']]//div[contains(@class,'cursor-pointer')][2]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T17:51:35.558022" elapsed="0.109914"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} visible and clicked successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:35.668416" elapsed="0.001625"/>
+</kw>
+<arg>${HISTORY_BTN}</arg>
+<arg>Session History button</arg>
+<status status="PASS" start="2026-04-22T17:51:35.525459" elapsed="0.144976"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Chat history</arg>
+<arg>timeout= 20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-22T17:51:35.672558" elapsed="0.027911"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2026-04-22T17:51:45.715743" level="INFO">Element 'xpath=//div[contains(@class,'smallLoader')]' did not exist.</msg>
+<arg>${HISTORY_LOADER}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2026-04-22T17:51:35.702926" elapsed="10.012917"/>
+</kw>
+<arg>120s</arg>
+<arg>2s</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${HISTORY_LOADER}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-22T17:51:35.701376" elapsed="10.014556"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Session History loaded successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-22T17:51:45.716400" elapsed="0.000633"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-22T17:51:47.719214" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-22T17:51:45.718144" elapsed="2.001234"/>
+</kw>
+<status status="PASS" start="2026-04-22T17:51:35.522160" elapsed="12.198286"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-22T17:51:47.724758" elapsed="2.316020"/>
+</kw>
+<status status="FAIL" start="2026-04-22T17:50:57.684517" elapsed="52.356388"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Session" id="s1" pass="4" fail="1" skip="0">Session</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

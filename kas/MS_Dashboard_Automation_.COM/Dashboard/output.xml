@@ -1,0 +1,3280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-04-28T12:02:16.128333" rpa="false" schemaversion="5">
+<suite id="s1" name="Dashboard" source="E:\selenium project\kas\MS_Dashboard_Automation_.COM\Dashboard\Dashboard.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>../screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-04-28T12:02:16.566731" elapsed="0.000362"/>
+</kw>
+<kw name="Login Setup" owner="Common_keywords">
+<kw name="Open Application" owner="Common_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Opening ${url}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:02:16.568285" elapsed="0.000545"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:16.570187" level="INFO">Opening browser 'chrome' to base url 'https://dashboard.mysellercentral.com/sign-in'.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-28T12:02:16.569285" elapsed="10.704118"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-28T12:02:27.273667" elapsed="0.035508"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-04-28T12:02:27.309405" elapsed="0.001609"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PAGE_HEADING}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:02:27.311235" elapsed="0.047300"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Page loaded successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:02:27.358782" elapsed="0.000610"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2026-04-28T12:02:16.567969" elapsed="10.791607"/>
+</kw>
+<kw name="Enter Login Credentials And Submit" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:02:27.360244" elapsed="0.030909"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:27.391686" level="INFO">Typing text 'ketan.bhagwate@gmail.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:02:27.391377" elapsed="0.296002"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:27.688102" level="INFO">Typing text '++Pass@123' into text field 'xpath=//input[@type='password']'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:02:27.687679" elapsed="0.151483"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>id=preloader</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-28T12:02:27.839403" elapsed="0.455124"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:28.295026" level="INFO">Clicking element 'xpath=//button[normalize-space()='Continue']'.</msg>
+<arg>${CONTINUE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:02:28.294766" elapsed="0.077076"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Continue Button Visible and Click</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:02:28.372303" elapsed="0.001047"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Login Success</arg>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:02:28.373659" elapsed="1.811138"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Login successful with email: ${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:02:30.185105" elapsed="0.000755"/>
+</kw>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-04-28T12:02:27.359852" elapsed="2.826195"/>
+</kw>
+<arg>https://dashboard.mysellercentral.com/sign-in</arg>
+<arg>ketan.bhagwate@gmail.com</arg>
+<arg>++Pass@123</arg>
+<status status="PASS" start="2026-04-28T12:02:16.567499" elapsed="13.618670"/>
+</kw>
+<arg>Set Screenshot Directory</arg>
+<arg>../screenshots</arg>
+<arg>AND</arg>
+<arg>Login Setup</arg>
+<arg>https://dashboard.mysellercentral.com/sign-in</arg>
+<arg>ketan.bhagwate@gmail.com</arg>
+<arg>++Pass@123</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-28T12:02:16.565961" elapsed="13.620328"/>
+</kw>
+<test id="s1-t1" name="1.Verify Login ,Verify Dashboard,Verify MSC Intelligence" line="15">
+<kw name="Verify Dashboard Redirection" owner="Common_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Home</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:02:30.188617" elapsed="3.462130"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Logged in successfully and Dashboard loaded</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:02:33.650986" elapsed="0.000706"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:02:30.188231" elapsed="3.463645"/>
+</kw>
+<kw name="Verify MSC Intelligence popup Open and Close" owner="Common_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>MSC Intelligence</arg>
+<arg>30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:02:33.654195" elapsed="3.894268"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_CLOSE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:02:37.548910" elapsed="0.217933"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:37.768063" level="INFO">Clicking element 'xpath=//*[name()='svg' and contains(@class, 'text-xl')]'.</msg>
+<arg>${BTN_CLOSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:02:37.767524" elapsed="0.251252"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Close button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.020065" elapsed="0.001272"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:02:33.653772" elapsed="4.367886"/>
+</kw>
+<kw name="Open MSC Intelligence And Verify Insights" owner="Common_keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:38.075478" level="INFO">Current page contains element 'xpath=//button[.//span[normalize-space()='MSC Intelligence']]'.</msg>
+<arg>${MSC_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.028222" elapsed="0.047701"/>
+</kw>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${MSC_BUTTON}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.027043" elapsed="0.049034"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:38.076805" level="INFO">Clicking element 'xpath=//button[.//span[normalize-space()='MSC Intelligence']]'.</msg>
+<arg>${MSC_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.076350" elapsed="0.197953"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>MSC Intelligence</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.274563" elapsed="0.381082"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>MSC Intelligence button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.656092" elapsed="0.001238"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:02:38.026245" elapsed="0.631498"/>
+</kw>
+<kw name="Verify MSC Intelligence popup Open and Close" owner="Common_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>MSC Intelligence</arg>
+<arg>30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.660886" elapsed="0.040802"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_CLOSE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.702266" elapsed="0.040677"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:38.743723" level="INFO">Clicking element 'xpath=//*[name()='svg' and contains(@class, 'text-xl')]'.</msg>
+<arg>${BTN_CLOSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.743300" elapsed="0.244303"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Close button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.988098" elapsed="0.001230"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:02:38.660007" elapsed="0.329574"/>
+</kw>
+<kw name="Verify Page Load" owner="Common_keywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:39.224059" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-1.png"&gt;&lt;img src="../screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:39.224572" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:38.993091" elapsed="0.241806">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:38.992356" elapsed="0.243426">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:41.675766" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-2.png"&gt;&lt;img src="../screenshots/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:41.676082" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:41.238348" elapsed="0.439797">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:41.236714" elapsed="0.441814">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:43.933627" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-3.png"&gt;&lt;img src="../screenshots/selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:43.934050" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:43.680250" elapsed="0.256692">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:43.679292" elapsed="0.258093">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:46.225879" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-4.png"&gt;&lt;img src="../screenshots/selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:46.226157" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:45.938975" elapsed="0.289193">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:45.938240" elapsed="0.290188">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:48.468599" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-5.png"&gt;&lt;img src="../screenshots/selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:48.468971" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:48.230105" elapsed="0.241873">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:48.229388" elapsed="0.242936">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:50.696089" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-6.png"&gt;&lt;img src="../screenshots/selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:50.696305" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:50.474381" elapsed="0.225245">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:50.473823" elapsed="0.226272">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:52.910644" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-7.png"&gt;&lt;img src="../screenshots/selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:52.911101" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:52.703528" elapsed="0.211814">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:52.701693" elapsed="0.214408">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:55.121886" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-8.png"&gt;&lt;img src="../screenshots/selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:55.122075" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:54.918450" elapsed="0.204822">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:54.917819" elapsed="0.205610">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:57.316631" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-9.png"&gt;&lt;img src="../screenshots/selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:57.316846" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:57.124945" elapsed="0.193693">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:57.124235" elapsed="0.194608">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:02:59.524035" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-10.png"&gt;&lt;img src="../screenshots/selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:02:59.524305" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:02:59.320111" elapsed="0.205599">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:02:59.319459" elapsed="0.206406">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:01.715785" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-11.png"&gt;&lt;img src="../screenshots/selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T12:03:01.716089" level="FAIL">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="FAIL" start="2026-04-28T12:03:01.527681" elapsed="0.190512">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-04-28T12:03:01.527265" elapsed="0.191191">Page should not have contained element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:13.779659" level="INFO">Current page does not contain element 'xpath=//*[contains(@class,'skeleton') or contains(@class,'shimmer')]'.</msg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:03:03.720599" elapsed="10.059200"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:13.800151" level="INFO">Current page contains element 'xpath=//*[name()='svg' or name()='canvas']'.</msg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.780182" elapsed="0.020159"/>
+</kw>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-28T12:03:03.719977" elapsed="10.080493"/>
+</kw>
+<arg>50s</arg>
+<arg>2s</arg>
+<arg>Run Keywords</arg>
+<arg>Page Should Not Contain Element</arg>
+<arg>${SKELETON_ELEMENTS}</arg>
+<arg>AND</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${CHART_ELEMENTS}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-28T12:02:38.991488" elapsed="34.809062"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:02:38.990893" elapsed="34.809756"/>
+</kw>
+<doc>Verify successful login, dashboard redirection, MSC Intelligence popup functionality,
+and validate insights along with page load.</doc>
+<status status="PASS" start="2026-04-28T12:02:30.186479" elapsed="43.614558"/>
+</test>
+<test id="s1-t2" name="2.Verify Dashboard Header Elements" line="24">
+<kw name="Verify MSC Logo Visible" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${msc_logo_locator}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.804872" elapsed="0.025162"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>MSC logo is visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.830245" elapsed="0.000609"/>
+</kw>
+<arg>${MSC_LOGO}</arg>
+<status status="PASS" start="2026-04-28T12:03:13.804472" elapsed="0.026934"/>
+</kw>
+<kw name="Verify Brand Visible" owner="Common_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${brand_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.835092" elapsed="0.020699"/>
+</kw>
+<msg time="2026-04-28T12:03:13.856019" level="INFO">${brand_visible} = True</msg>
+<var>${brand_visible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${brand_locator}</arg>
+<arg>10s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.834690" elapsed="0.021370"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${brand_visible}</arg>
+<arg>Brand is not visible on the page</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.856260" elapsed="0.000436"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Brand is visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.856875" elapsed="0.000564"/>
+</kw>
+<arg>${BRAND}</arg>
+<status status="PASS" start="2026-04-28T12:03:13.834287" elapsed="0.023317"/>
+</kw>
+<kw name="Select Brand From Dropdown" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dropdown_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.858583" elapsed="0.018150"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:13.877578" level="INFO">Clicking element 'xpath=//div[contains(@class,'relative inline-block')]//div[contains(@class,'gradient-border-gray') and .//div[normalize-space()='All Brands']]'.</msg>
+<arg>${dropdown_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.877136" elapsed="0.082490"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-28T12:03:13.960517" level="INFO">${option} = xpath=//span[normalize-space()='APSMOTIV']/parent::div</msg>
+<var>${option}</var>
+<arg>xpath=//span[normalize-space()='${option_text}']/parent::div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.959927" elapsed="0.000647"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${option}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.960802" elapsed="0.030657"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:13.992061" level="INFO">Clicking element 'xpath=//span[normalize-space()='APSMOTIV']/parent::div'.</msg>
+<arg>${option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.991749" elapsed="0.195923"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Selected: ${option_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.187975" elapsed="0.000868"/>
+</kw>
+<arg>${BRAND}</arg>
+<arg>APSMOTIV</arg>
+<status status="PASS" start="2026-04-28T12:03:13.858130" elapsed="0.330932"/>
+</kw>
+<kw name="Verify Country" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:14.330161" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${COUNTRY}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.191444" elapsed="0.138783"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Selected country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.330443" elapsed="0.000813"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-04-28T12:03:14.332799" level="INFO">@{allowed} = [ India | United State ]</msg>
+<var>@{allowed}</var>
+<arg>India</arg>
+<arg>United State</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.331655" elapsed="0.001240"/>
+</kw>
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${allowed}</arg>
+<arg>${country}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.333313" elapsed="0.000844"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:14.190904" elapsed="0.143465"/>
+</kw>
+<kw name="Select From Dropdown" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dropdown_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.335963" elapsed="0.024583"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:14.361056" level="INFO">Clicking element 'xpath=(//div[contains(@class,'relative') and contains(@class,'inline-block')]//div[contains(@class,'gradient-border-gray')])[1]'.</msg>
+<arg>${dropdown_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.360771" elapsed="0.146988"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-28T12:03:14.509097" level="INFO">${option} = xpath=//div[contains(@class,'z-50')]//span[normalize-space()='United Kingdom']/parent::div</msg>
+<var>${option}</var>
+<arg>xpath=//div[contains(@class,'z-50')]//span[normalize-space()='${option_text}']/parent::div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.508225" elapsed="0.000989"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${option}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.509495" elapsed="0.047218"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:14.557457" level="INFO">Clicking element 'xpath=//div[contains(@class,'z-50')]//span[normalize-space()='United Kingdom']/parent::div'.</msg>
+<arg>${option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.557139" elapsed="0.371074"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Selected: ${option_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.928456" elapsed="0.000733"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>United Kingdom</arg>
+<status status="PASS" start="2026-04-28T12:03:14.335003" elapsed="0.594373"/>
+</kw>
+<kw name="Verify MSC Intelligence popup Open and Close In Dashboard" owner="Common_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>here are your useful Insights!</arg>
+<arg>30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:03:14.934402" elapsed="5.287515"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_CLOSE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:20.222172" elapsed="0.036555"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:20.259254" level="INFO">Clicking element 'xpath=//*[name()='svg' and contains(@class, 'text-xl')]'.</msg>
+<arg>${BTN_CLOSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:20.258958" elapsed="0.247812"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Close button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:20.507310" elapsed="0.001285"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:14.933805" elapsed="5.575083"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:20.511690" elapsed="0.319134"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:20.831136" elapsed="0.040317"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:20.871656" elapsed="0.133993"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.006010" elapsed="0.001022"/>
+</kw>
+<arg>Today</arg>
+<arg>${TODAY_CARD}</arg>
+<arg>${TODAY_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:20.510775" elapsed="0.496554"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:21.046111" level="INFO">${country} = United Kingdom</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.010185" elapsed="0.035982"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:21.088344" level="INFO">${revenue} = £181.08</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.046373" elapsed="0.042100"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:21.089887" level="INFO">${country} = United Kingdom</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.089543" elapsed="0.000386"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:21.090373" level="INFO">${revenue} = £181.08</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.090119" elapsed="0.000297"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:21.090974" level="INFO">${symbol} = £</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.090589" elapsed="0.000438"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.091189" elapsed="0.000748"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.092206" elapsed="0.002369"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.094774" elapsed="0.002837"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.098152" elapsed="0.000571"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.098968" elapsed="0.019536"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:21.089004" elapsed="0.029697"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_TODAY}</arg>
+<status status="PASS" start="2026-04-28T12:03:21.009135" elapsed="0.109651"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.122711" elapsed="0.303042"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.426003" elapsed="0.031429"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.457665" elapsed="0.037898"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.495781" elapsed="0.000680"/>
+</kw>
+<arg>Yesterday</arg>
+<arg>${YESTERDAY_CARD}</arg>
+<arg>${YESTERDAY_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:21.122176" elapsed="0.374409"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:21.530100" level="INFO">${country} = United Kingdom</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.499812" elapsed="0.030343"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:21.564798" level="INFO">${revenue} = £364.43</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.530432" elapsed="0.034457"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:21.566319" level="INFO">${country} = United Kingdom</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.565963" elapsed="0.000417"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:21.566920" level="INFO">${revenue} = £364.43</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.566622" elapsed="0.000351"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:21.567566" level="INFO">${symbol} = £</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.567185" elapsed="0.000440"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.567847" elapsed="0.000749"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.569020" elapsed="0.001351"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.570748" elapsed="0.002561"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.573715" elapsed="0.000584"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.574536" elapsed="0.006877"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:21.565292" elapsed="0.016401"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_YESTERDAY}</arg>
+<status status="PASS" start="2026-04-28T12:03:21.498922" elapsed="0.082917"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.582908" elapsed="0.292693"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.875855" elapsed="0.035954"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.912034" elapsed="0.041943"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.954192" elapsed="0.000780"/>
+</kw>
+<arg>Last 7 Days</arg>
+<arg>${LAST7DAYS_CARD}</arg>
+<arg>${LAST7DAYS_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:21.582339" elapsed="0.372755"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:21.988476" level="INFO">${country} = United Kingdom</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.957316" elapsed="0.031227"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:22.020729" level="INFO">${revenue} = £4,965.57</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:21.988778" elapsed="0.032059"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:22.021766" level="INFO">${country} = United Kingdom</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.021519" elapsed="0.000310"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:22.022133" level="INFO">${revenue} = £4,965.57</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.021956" elapsed="0.000210"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:22.022534" level="INFO">${symbol} = £</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.022307" elapsed="0.000262"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.022695" elapsed="0.000696"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.023801" elapsed="0.001223"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.025388" elapsed="0.001917"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.028013" elapsed="0.000841"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.029045" elapsed="0.000728"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:22.021093" elapsed="0.008961"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_LAST_7_DAYS}</arg>
+<status status="PASS" start="2026-04-28T12:03:21.956788" elapsed="0.073360"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.031922" elapsed="0.302250"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.334423" elapsed="0.017459"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.352322" elapsed="0.062518"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.415094" elapsed="0.000715"/>
+</kw>
+<arg>Last 30 Days</arg>
+<arg>${LASTMONTH_CARD}</arg>
+<arg>${LASTMONTH_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:22.030978" elapsed="0.385044"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:22.451735" level="INFO">${country} = United Kingdom</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.418581" elapsed="0.033222"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:22.479493" level="INFO">${revenue} = £31,472.72</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.452051" elapsed="0.027519"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:22.480503" level="INFO">${country} = United Kingdom</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.480250" elapsed="0.000380"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:22.481130" level="INFO">${revenue} = £31,472.72</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.480899" elapsed="0.000268"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:22.481547" level="INFO">${symbol} = £</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.481311" elapsed="0.000270"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.481705" elapsed="0.000583"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.482639" elapsed="0.001132"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.484262" elapsed="0.001948"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.486541" elapsed="0.000784"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.487477" elapsed="0.000454"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:22.479862" elapsed="0.008202"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_LAST_MONTH}</arg>
+<status status="PASS" start="2026-04-28T12:03:22.417898" elapsed="0.070246"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country dropdown and cards verified for United State</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.488678" elapsed="0.000772"/>
+</kw>
+<kw name="Select From Dropdown" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dropdown_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.491018" elapsed="0.016274"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:22.507820" level="INFO">Clicking element 'xpath=(//div[contains(@class,'relative') and contains(@class,'inline-block')]//div[contains(@class,'gradient-border-gray')])[1]'.</msg>
+<arg>${dropdown_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.507526" elapsed="0.067721"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-28T12:03:22.576115" level="INFO">${option} = xpath=//div[contains(@class,'z-50')]//span[normalize-space()='India']/parent::div</msg>
+<var>${option}</var>
+<arg>xpath=//div[contains(@class,'z-50')]//span[normalize-space()='${option_text}']/parent::div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.575478" elapsed="0.000851"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${option}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.576598" elapsed="0.241585"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:22.818639" level="INFO">Clicking element 'xpath=//div[contains(@class,'z-50')]//span[normalize-space()='India']/parent::div'.</msg>
+<arg>${option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.818379" elapsed="0.179902"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Selected: ${option_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:22.998770" elapsed="0.001530"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>India</arg>
+<status status="PASS" start="2026-04-28T12:03:22.490601" elapsed="0.509999"/>
+</kw>
+<kw name="Verify MSC Intelligence popup Open and Close In Dashboard" owner="Common_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>here are your useful Insights!</arg>
+<arg>30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:03:23.003254" elapsed="7.388617"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_CLOSE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:30.392209" elapsed="0.039483"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:30.433080" level="INFO">Clicking element 'xpath=//*[name()='svg' and contains(@class, 'text-xl')]'.</msg>
+<arg>${BTN_CLOSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:30.432420" elapsed="0.195314"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Close button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:30.627970" elapsed="0.000731"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:23.002651" elapsed="7.626185"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:30.632398" elapsed="0.289119"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:30.921987" elapsed="0.026123"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:30.948473" elapsed="0.028881"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:30.977696" elapsed="0.000699"/>
+</kw>
+<arg>Today</arg>
+<arg>${TODAY_CARD}</arg>
+<arg>${TODAY_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:30.631030" elapsed="0.347515"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:31.007363" level="INFO">${country} = India</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:30.980695" elapsed="0.026733"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:31.030608" level="INFO">${revenue} = ₹8,884.00</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.007694" elapsed="0.022992"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:31.031808" level="INFO">${country} = India</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.031536" elapsed="0.000308"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:31.032165" level="INFO">${revenue} = ₹8,884.00</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.031981" elapsed="0.000220"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:31.032552" level="INFO">${symbol} = ₹</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.032343" elapsed="0.000240"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.032724" elapsed="0.008759"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.041978" elapsed="0.001080"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.043303" elapsed="0.002021"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.045581" elapsed="0.000427"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.046224" elapsed="0.000498"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:31.031052" elapsed="0.015803"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_TODAY}</arg>
+<status status="PASS" start="2026-04-28T12:03:30.980153" elapsed="0.066773"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.048132" elapsed="0.288946"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.337425" elapsed="0.024417"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.362060" elapsed="0.025332"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.387799" elapsed="0.000773"/>
+</kw>
+<arg>Yesterday</arg>
+<arg>${YESTERDAY_CARD}</arg>
+<arg>${YESTERDAY_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:31.047465" elapsed="0.341354"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:31.426217" level="INFO">${country} = India</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.390897" elapsed="0.035458"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:31.455093" level="INFO">${revenue} = ₹23,059.00</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.426946" elapsed="0.028208"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:31.456647" level="INFO">${country} = India</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.456124" elapsed="0.000590"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:31.457220" level="INFO">${revenue} = ₹23,059.00</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.456934" elapsed="0.000330"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:31.457697" level="INFO">${symbol} = ₹</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.457415" elapsed="0.000325"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.457887" elapsed="0.000719"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.458860" elapsed="0.001224"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.460300" elapsed="0.002204"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.462789" elapsed="0.000508"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.463468" elapsed="0.000570"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:31.455447" elapsed="0.008928"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_YESTERDAY}</arg>
+<status status="PASS" start="2026-04-28T12:03:31.390215" elapsed="0.074416"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.465714" elapsed="0.300009"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.765951" elapsed="0.028409"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.794591" elapsed="0.025497"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.820313" elapsed="0.000769"/>
+</kw>
+<arg>Last 7 Days</arg>
+<arg>${LAST7DAYS_CARD}</arg>
+<arg>${LAST7DAYS_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:31.465147" elapsed="0.356098"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:31.852612" level="INFO">${country} = India</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.823101" elapsed="0.029573"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:31.879092" level="INFO">${revenue} = ₹208,115.00</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.852942" elapsed="0.026223"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:31.880018" level="INFO">${country} = India</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.879832" elapsed="0.000217"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:31.880315" level="INFO">${revenue} = ₹208,115.00</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.880159" elapsed="0.000185"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:31.880654" level="INFO">${symbol} = ₹</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.880483" elapsed="0.000205"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.880862" elapsed="0.000717"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.881818" elapsed="0.001407"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.883522" elapsed="0.002867"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.886671" elapsed="0.000528"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.887364" elapsed="0.001338"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:31.879418" elapsed="0.009519"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_LAST_7_DAYS}</arg>
+<status status="PASS" start="2026-04-28T12:03:31.822623" elapsed="0.066439"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:31.890120" elapsed="0.303609"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.194000" elapsed="0.019833"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.214083" elapsed="0.023034"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.237363" elapsed="0.000934"/>
+</kw>
+<arg>Last 30 Days</arg>
+<arg>${LASTMONTH_CARD}</arg>
+<arg>${LASTMONTH_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:31.889667" elapsed="0.348789"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:32.272463" level="INFO">${country} = India</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.240636" elapsed="0.031921"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:32.304019" level="INFO">${revenue} = ₹945,381.00</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.272780" elapsed="0.031307"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:32.305103" level="INFO">${country} = India</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.304867" elapsed="0.000271"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:32.305493" level="INFO">${revenue} = ₹945,381.00</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.305287" elapsed="0.000268"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:32.305920" level="INFO">${symbol} = ₹</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.305685" elapsed="0.000269"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.306088" elapsed="0.000904"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.307251" elapsed="0.012303"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.319930" elapsed="0.001580"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.321756" elapsed="0.000438"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.322374" elapsed="0.000577"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:32.304432" elapsed="0.018678"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_LAST_MONTH}</arg>
+<status status="PASS" start="2026-04-28T12:03:32.240095" elapsed="0.083100"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country dropdown and cards verified for India</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.324187" elapsed="0.000678"/>
+</kw>
+<kw name="Select From Dropdown" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dropdown_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.326456" elapsed="0.032034"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:32.359248" level="INFO">Clicking element 'xpath=(//div[contains(@class,'relative') and contains(@class,'inline-block')]//div[contains(@class,'gradient-border-gray')])[1]'.</msg>
+<arg>${dropdown_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.358790" elapsed="0.120811"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-28T12:03:32.480499" level="INFO">${option} = xpath=//div[contains(@class,'z-50')]//span[normalize-space()='United State']/parent::div</msg>
+<var>${option}</var>
+<arg>xpath=//div[contains(@class,'z-50')]//span[normalize-space()='${option_text}']/parent::div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.479873" elapsed="0.000676"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${option}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.480781" elapsed="0.043985"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:32.525300" level="INFO">Clicking element 'xpath=//div[contains(@class,'z-50')]//span[normalize-space()='United State']/parent::div'.</msg>
+<arg>${option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.525007" elapsed="0.351744"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Selected: ${option_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.877021" elapsed="0.000905"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>United State</arg>
+<status status="PASS" start="2026-04-28T12:03:32.325903" elapsed="0.552220"/>
+</kw>
+<kw name="Verify MSC Intelligence popup Open and Close In Dashboard" owner="Common_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>here are your useful Insights!</arg>
+<arg>30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:03:32.880612" elapsed="1.031056"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_CLOSE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:33.912188" elapsed="0.077500"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:33.990355" level="INFO">Clicking element 'xpath=//*[name()='svg' and contains(@class, 'text-xl')]'.</msg>
+<arg>${BTN_CLOSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:33.990047" elapsed="0.235963"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Close button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.226518" elapsed="0.001061"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:32.880040" elapsed="1.347702"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.230455" elapsed="0.335479"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.566243" elapsed="0.130897"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.697492" elapsed="0.030587"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.728288" elapsed="0.000664"/>
+</kw>
+<arg>Today</arg>
+<arg>${TODAY_CARD}</arg>
+<arg>${TODAY_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:34.229796" elapsed="0.499284"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:34.774709" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.731361" elapsed="0.043415"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:34.806117" level="INFO">${revenue} = $280.62</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.775037" elapsed="0.031142"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:34.807293" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.807024" elapsed="0.000312"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:34.807823" level="INFO">${revenue} = $280.62</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.807536" elapsed="0.000370"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:34.808447" level="INFO">${symbol} = $</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.808098" elapsed="0.000390"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.808660" elapsed="0.000787"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.809833" elapsed="0.001012"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.811303" elapsed="0.001842"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.813403" elapsed="0.000513"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.814262" elapsed="0.000824"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:34.806486" elapsed="0.008752"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_TODAY}</arg>
+<status status="PASS" start="2026-04-28T12:03:34.730638" elapsed="0.084688"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:34.816645" elapsed="0.294800"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.111861" elapsed="0.025335"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.137437" elapsed="0.027644"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.165326" elapsed="0.000908"/>
+</kw>
+<arg>Yesterday</arg>
+<arg>${YESTERDAY_CARD}</arg>
+<arg>${YESTERDAY_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:34.816130" elapsed="0.350332"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:35.203401" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.168729" elapsed="0.034792"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:35.228342" level="INFO">${revenue} = $428.93</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.203902" elapsed="0.024512"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:35.229480" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.229233" elapsed="0.000307"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:35.229908" level="INFO">${revenue} = $428.93</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.229686" elapsed="0.000266"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:35.230331" level="INFO">${symbol} = $</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.230105" elapsed="0.000260"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.230517" elapsed="0.000907"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.231799" elapsed="0.005415"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.237531" elapsed="0.000904"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.238664" elapsed="0.000613"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.239496" elapsed="0.000783"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:35.228726" elapsed="0.011774"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_YESTERDAY}</arg>
+<status status="PASS" start="2026-04-28T12:03:35.168004" elapsed="0.072652"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.241754" elapsed="0.305757"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.547797" elapsed="0.030827"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.578921" elapsed="0.031447"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.610614" elapsed="0.000682"/>
+</kw>
+<arg>Last 7 Days</arg>
+<arg>${LAST7DAYS_CARD}</arg>
+<arg>${LAST7DAYS_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:35.241236" elapsed="0.370273"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:35.660270" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.613601" elapsed="0.046786"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:35.711023" level="INFO">${revenue} = $5,568.21</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.660804" elapsed="0.050312"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:35.712513" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.712116" elapsed="0.000450"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:35.713381" level="INFO">${revenue} = $5,568.21</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.712863" elapsed="0.000579"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:35.714824" level="INFO">${symbol} = $</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.713695" elapsed="0.001320"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.715472" elapsed="0.001309"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.717263" elapsed="0.001809"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.719687" elapsed="0.001582"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.721825" elapsed="0.001686"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.724005" elapsed="0.000977"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:35.711479" elapsed="0.013762"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_LAST_7_DAYS}</arg>
+<status status="PASS" start="2026-04-28T12:03:35.613057" elapsed="0.112338"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:35.727172" elapsed="0.315106"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.042489" elapsed="0.021844"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.064585" elapsed="0.015325"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.080133" elapsed="0.000683"/>
+</kw>
+<arg>Last 30 Days</arg>
+<arg>${LASTMONTH_CARD}</arg>
+<arg>${LASTMONTH_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:35.726284" elapsed="0.354658"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:36.101762" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.083091" elapsed="0.018723"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:36.119072" level="INFO">${revenue} = $38,200.37</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.102003" elapsed="0.017123"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:36.119931" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.119739" elapsed="0.000222"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:36.120259" level="INFO">${revenue} = $38,200.37</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.120068" elapsed="0.000221"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:36.120605" level="INFO">${symbol} = $</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.120400" elapsed="0.000231"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.120758" elapsed="0.000550"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.121478" elapsed="0.000892"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.122761" elapsed="0.001900"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.124870" elapsed="0.000781"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.125834" elapsed="0.000433"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:36.119384" elapsed="0.007010"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_LAST_MONTH}</arg>
+<status status="PASS" start="2026-04-28T12:03:36.082633" elapsed="0.043838"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country dropdown and cards verified for United State</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.126767" elapsed="0.000465"/>
+</kw>
+<kw name="Select Language From Dropdown" owner="Common_keywords">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:36.128860" level="INFO">${expected} = Hoy</msg>
+<var>${expected}</var>
+<arg>${LANG_EXPECTED_TEXT}</arg>
+<arg>${language}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.128641" elapsed="0.000251"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:36.129220" level="INFO">Clicking element 'xpath=(//div[contains(@class,'rounded-[10px]') and contains(@class,'cursor-pointer') and .//span])[last()]'.</msg>
+<arg>${dropdown_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.129039" elapsed="0.072628"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:36.202200" level="INFO">Clicking element 'xpath=//span[normalize-space()='Spanish']/parent::div'.</msg>
+<arg>xpath=//span[normalize-space()='${language}']/parent::div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.201889" elapsed="0.087448"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-04-28T12:03:36.290050" level="INFO">${SELECTED_LANG} = Spanish</msg>
+<arg>${SELECTED_LANG}</arg>
+<arg>${language}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.289593" elapsed="0.000517"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:37.129691" level="INFO">Current page contains text 'Hoy'.</msg>
+<arg>${expected}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.290727" elapsed="0.839183"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Page Should Contain</arg>
+<arg>${expected}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-28T12:03:36.290266" elapsed="0.839739"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${language} validated successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.130189" elapsed="0.001191"/>
+</kw>
+<arg>${LANG_HEADER_ANY}</arg>
+<arg>Spanish</arg>
+<status status="PASS" start="2026-04-28T12:03:36.128215" elapsed="1.003454"/>
+</kw>
+<kw name="Select Language From Dropdown" owner="Common_keywords">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:37.134423" level="INFO">${expected} = Today</msg>
+<var>${expected}</var>
+<arg>${LANG_EXPECTED_TEXT}</arg>
+<arg>${language}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.134095" elapsed="0.000364"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:37.134817" level="INFO">Clicking element 'xpath=(//div[contains(@class,'rounded-[10px]') and contains(@class,'cursor-pointer') and .//span])[last()]'.</msg>
+<arg>${dropdown_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.134601" elapsed="0.108507"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:37.243702" level="INFO">Clicking element 'xpath=//span[normalize-space()='English']/parent::div'.</msg>
+<arg>xpath=//span[normalize-space()='${language}']/parent::div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.243351" elapsed="0.130369"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-04-28T12:03:37.374434" level="INFO">${SELECTED_LANG} = English</msg>
+<arg>${SELECTED_LANG}</arg>
+<arg>${language}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.373952" elapsed="0.000537"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:37.904598" level="INFO">Current page contains text 'Today'.</msg>
+<arg>${expected}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.375320" elapsed="0.529393"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Page Should Contain</arg>
+<arg>${expected}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.374655" elapsed="0.530234"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${language} validated successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.905059" elapsed="0.000710"/>
+</kw>
+<arg>${LANG_HEADER_ANY}</arg>
+<arg>English</arg>
+<status status="PASS" start="2026-04-28T12:03:37.133675" elapsed="0.772292"/>
+</kw>
+<kw name="Verify Marketplace" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:37.939538" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.908502" elapsed="0.031108"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:37.975391" level="INFO">${market} = Amazon.com</msg>
+<var>${market}</var>
+<arg>${marketplace_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.939834" elapsed="0.035638"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.975634" elapsed="0.000785"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Marketplace: ${market}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.976644" elapsed="0.001200"/>
+</kw>
+<if>
+<branch type="IF" condition="'${country}' == 'India'">
+<kw name="Create List" owner="BuiltIn">
+<var>@{allowed}</var>
+<arg>Amazon.in</arg>
+<arg>Shopify.com/in</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-04-28T12:03:37.978375" elapsed="0.000043"/>
+</kw>
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${allowed}</arg>
+<arg>${market}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="NOT RUN" start="2026-04-28T12:03:37.978574" elapsed="0.000031"/>
+</kw>
+<status status="NOT RUN" start="2026-04-28T12:03:37.978050" elapsed="0.000596"/>
+</branch>
+<branch type="ELSE IF" condition="'${country}' == 'United State'">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${market}</arg>
+<arg>Amazon.com</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.978949" elapsed="0.000384"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:37.978714" elapsed="0.000677"/>
+</branch>
+<branch type="ELSE IF" condition="'${country}' == 'United Kingdom'">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${market}</arg>
+<arg>Amazon.co.uk</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-04-28T12:03:37.979558" elapsed="0.000028"/>
+</kw>
+<status status="NOT RUN" start="2026-04-28T12:03:37.979439" elapsed="0.000189"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>Unsupported country: ${country}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-04-28T12:03:37.979773" elapsed="0.000026"/>
+</kw>
+<status status="NOT RUN" start="2026-04-28T12:03:37.979675" elapsed="0.000163"/>
+</branch>
+<status status="PASS" start="2026-04-28T12:03:37.978008" elapsed="0.001861"/>
+</if>
+<arg>${COUNTRY}</arg>
+<arg>${MARKETPLACE}</arg>
+<status status="PASS" start="2026-04-28T12:03:37.907958" elapsed="0.071973"/>
+</kw>
+<kw name="Verify Brand Visible" owner="Common_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${brand_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.981904" elapsed="0.031134"/>
+</kw>
+<msg time="2026-04-28T12:03:38.013239" level="INFO">${brand_visible} = True</msg>
+<var>${brand_visible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${brand_locator}</arg>
+<arg>10s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-28T12:03:37.981319" elapsed="0.031957"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${brand_visible}</arg>
+<arg>Brand is not visible on the page</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.013443" elapsed="0.000381"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Brand is visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.013948" elapsed="0.000536"/>
+</kw>
+<arg>${BRAND}</arg>
+<status status="PASS" start="2026-04-28T12:03:37.980584" elapsed="0.034134"/>
+</kw>
+<kw name="Verify Notification Icon Visible" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${notification_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.017247" elapsed="0.041733"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Notification icon is visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.059403" elapsed="0.000940"/>
+</kw>
+<arg>${NOTIFICATION}</arg>
+<status status="PASS" start="2026-04-28T12:03:38.016789" elapsed="0.043858"/>
+</kw>
+<kw name="Verify Profile Icon Visible" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${profile_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.063222" elapsed="0.042839"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Profile icon is visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.106335" elapsed="0.000947"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>All dashboard header elements loaded successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.107759" elapsed="0.001486"/>
+</kw>
+<arg>${PROFILE_ICON}</arg>
+<status status="PASS" start="2026-04-28T12:03:38.062580" elapsed="0.046914"/>
+</kw>
+<kw name="Verify MSC Intelligence Button Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${msc_button_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.112366" elapsed="0.308914"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${msc_button_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.421668" elapsed="0.030504"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>MSC Intelligence button is visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.452472" elapsed="0.000609"/>
+</kw>
+<arg>${MSC_BUTTON}</arg>
+<status status="PASS" start="2026-04-28T12:03:38.111884" elapsed="0.341313"/>
+</kw>
+<doc>Validate all header components such as logo, brand selection, country dropdown,
+marketplace, language selection, notification icon, and revenue cards for multiple countries.</doc>
+<status status="PASS" start="2026-04-28T12:03:13.803294" elapsed="24.651209"/>
+</test>
+<test id="s1-t3" name="3.Verify Dashboard Cards" line="87">
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.459262" elapsed="0.301382"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.760895" elapsed="0.026938"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.788077" elapsed="0.022543"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.810870" elapsed="0.000773"/>
+</kw>
+<arg>Today</arg>
+<arg>${TODAY_CARD}</arg>
+<arg>${TODAY_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:38.458714" elapsed="0.353177"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:38.844882" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.813535" elapsed="0.031409"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:38.875607" level="INFO">${revenue} = $280.62</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.845158" elapsed="0.030504"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:38.876647" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.876413" elapsed="0.000267"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:38.877032" level="INFO">${revenue} = $280.62</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.876828" elapsed="0.000237"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:38.877435" level="INFO">${symbol} = $</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.877196" elapsed="0.000270"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.877579" elapsed="0.000761"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.878579" elapsed="0.001140"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.880097" elapsed="0.002062"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.882501" elapsed="0.009782"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.892517" elapsed="0.000656"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:38.875979" elapsed="0.017317"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_TODAY}</arg>
+<status status="PASS" start="2026-04-28T12:03:38.812988" elapsed="0.080414"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.894478" elapsed="0.316074"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.210744" elapsed="0.021331"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.232290" elapsed="0.015207"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.247729" elapsed="0.000703"/>
+</kw>
+<arg>Yesterday</arg>
+<arg>${YESTERDAY_CARD}</arg>
+<arg>${YESTERDAY_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:38.893952" elapsed="0.354615"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:39.270712" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.250506" elapsed="0.020270"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:39.295989" level="INFO">${revenue} = $428.93</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.270982" elapsed="0.025060"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:39.297035" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.296795" elapsed="0.000301"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:39.297737" level="INFO">${revenue} = $428.93</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.297245" elapsed="0.000569"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:39.298541" level="INFO">${symbol} = $</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.298149" elapsed="0.000434"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.298750" elapsed="0.000755"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.299823" elapsed="0.001435"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.301635" elapsed="0.002205"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.304101" elapsed="0.001135"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.305514" elapsed="0.000640"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:39.296319" elapsed="0.010019"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_YESTERDAY}</arg>
+<status status="PASS" start="2026-04-28T12:03:39.249950" elapsed="0.056504"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.308629" elapsed="0.292527"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.601376" elapsed="0.014397"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.616167" elapsed="0.015111"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.631560" elapsed="0.000786"/>
+</kw>
+<arg>Last 7 Days</arg>
+<arg>${LAST7DAYS_CARD}</arg>
+<arg>${LAST7DAYS_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:39.307733" elapsed="0.324719"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:39.655133" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.634671" elapsed="0.020519"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:39.672783" level="INFO">${revenue} = $5,568.21</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.655389" elapsed="0.017449"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:39.673750" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.673525" elapsed="0.000262"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:39.674130" level="INFO">${revenue} = $5,568.21</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.673930" elapsed="0.000234"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:39.674499" level="INFO">${symbol} = $</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.674287" elapsed="0.000246"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.674656" elapsed="0.000547"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.675487" elapsed="0.001097"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.676904" elapsed="0.001632"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.679068" elapsed="0.001018"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.680358" elapsed="0.000788"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:39.673098" elapsed="0.008435"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_LAST_7_DAYS}</arg>
+<status status="PASS" start="2026-04-28T12:03:39.634132" elapsed="0.047608"/>
+</kw>
+<kw name="Verify Card Visible" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.682686" elapsed="0.271993"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.954904" elapsed="0.014277"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${card_locator}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.969473" elapsed="0.014281"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${card_name} card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.983958" elapsed="0.000709"/>
+</kw>
+<arg>Last 30 Days</arg>
+<arg>${LASTMONTH_CARD}</arg>
+<arg>${LASTMONTH_CARD_DATE}</arg>
+<status status="PASS" start="2026-04-28T12:03:39.682166" elapsed="0.302658"/>
+</kw>
+<kw name="Validate Revenue Currency From UI" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:40.005654" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:39.986827" elapsed="0.018883"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:40.022933" level="INFO">${revenue} = $38,200.37</msg>
+<var>${revenue}</var>
+<arg>${revenue_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.005910" elapsed="0.017079"/>
+</kw>
+<kw name="Validate Currency By Country" owner="Common_keywords">
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:40.023829" level="INFO">${country} = United State</msg>
+<var>${country}</var>
+<arg>${country}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.023615" elapsed="0.000248"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:40.024162" level="INFO">${revenue} = $38,200.37</msg>
+<var>${revenue}</var>
+<arg>${revenue}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.023988" elapsed="0.000206"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-04-28T12:03:40.024528" level="INFO">${symbol} = $</msg>
+<var>${symbol}</var>
+<arg>${CURRENCY_MAP}</arg>
+<arg>${country}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.024309" elapsed="0.000252"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Country: ${country}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.024685" elapsed="0.000536"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected Symbol: ${symbol}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.025487" elapsed="0.001003"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Revenue: ${revenue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.026870" elapsed="0.001579"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${revenue}</arg>
+<arg>${symbol}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.028703" elapsed="0.000953"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Currency validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.029881" elapsed="0.000591"/>
+</kw>
+<arg>${country}</arg>
+<arg>${revenue}</arg>
+<status status="PASS" start="2026-04-28T12:03:40.023237" elapsed="0.007433"/>
+</kw>
+<arg>${COUNTRY}</arg>
+<arg>${REVENUE_VALUE_LAST_MONTH}</arg>
+<status status="PASS" start="2026-04-28T12:03:39.986269" elapsed="0.044688"/>
+</kw>
+<doc>Validate visibility and correctness of dashboard summary cards including
+Today, Yesterday, Last 7 Days, and Last 30 Days revenue.</doc>
+<status status="PASS" start="2026-04-28T12:03:38.457627" elapsed="1.574413"/>
+</test>
+<test id="s1-t4" name="4.Validate All Dashboard Dates" line="103">
+<kw name="Validate Today Date" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:40.056098" level="INFO">${ui_date} = 2026-04-28</msg>
+<var>${ui_date}</var>
+<arg>${TODAY_DATE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.035149" elapsed="0.021018"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:40.056624" level="INFO">${ui_date} = 2026-04-28</msg>
+<var>${ui_date}</var>
+<arg>${ui_date}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.056363" elapsed="0.000301"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-04-28T12:03:40.057088" level="INFO">${system_date} = 2026-04-28</msg>
+<var>${system_date}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.056816" elapsed="0.000318"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-04-28T12:03:40.057653" level="INFO">${system_date} = 2026-04-28</msg>
+<var>${system_date}</var>
+<arg>${system_date}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.057291" elapsed="0.000394"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${ui_date}</arg>
+<arg>${system_date}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.057828" elapsed="0.000300"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Today OK → ${ui_date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.058235" elapsed="0.000541"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:40.034771" elapsed="0.024136"/>
+</kw>
+<kw name="Validate Yesterday Date" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:40.080561" level="INFO">${ui} = 2026-04-27</msg>
+<var>${ui}</var>
+<arg>${YESTERDAY_DATE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.059737" elapsed="0.020933"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:40.081210" level="INFO">${ui} = 2026-04-27</msg>
+<var>${ui}</var>
+<arg>${ui}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.080881" elapsed="0.000384"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-04-28T12:03:40.081793" level="INFO">${yesterday} = 2026-04-27</msg>
+<var>${yesterday}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>increment=-1d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.081424" elapsed="0.000408"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${ui}</arg>
+<arg>${yesterday}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.081960" elapsed="0.000372"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Yesterday OK → ${ui}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.082484" elapsed="0.000583"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:40.059378" elapsed="0.023835"/>
+</kw>
+<kw name="Validate Last 7 Days Range" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:40.104416" level="INFO">${ui} = 2026-04-21 to 2026-04-27</msg>
+<var>${ui}</var>
+<arg>${LAST7DAYS_DATE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.084878" elapsed="0.019600"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:40.105133" level="INFO">${ui} = 2026-04-21 to 2026-04-27</msg>
+<var>${ui}</var>
+<arg>${ui}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.104871" elapsed="0.000295"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-04-28T12:03:40.105592" level="INFO">${start} = 2026-04-21</msg>
+<var>${start}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>increment=-7d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.105316" elapsed="0.000308"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-04-28T12:03:40.106018" level="INFO">${end} = 2026-04-27</msg>
+<var>${end}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>increment=-1d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.105741" elapsed="0.000308"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${ui}</arg>
+<arg>${start}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.106166" elapsed="0.000619"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${ui}</arg>
+<arg>${end}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.106929" elapsed="0.000367"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Last 7 Days OK → ${ui}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.107462" elapsed="0.000510"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:40.084468" elapsed="0.023620"/>
+</kw>
+<kw name="Validate Last Month Range" owner="Common_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:40.128573" level="INFO">${ui} = 2026-03-27 to 2026-04-27</msg>
+<var>${ui}</var>
+<arg>${LASTMONTH_DATE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.109227" elapsed="0.019425"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-28T12:03:40.129079" level="INFO">${ui} = 2026-03-27 to 2026-04-27</msg>
+<var>${ui}</var>
+<arg>${ui}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.128846" elapsed="0.000266"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-04-28T12:03:40.129505" level="INFO">${end} = 2026-04-27</msg>
+<var>${end}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>increment=-1d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.129260" elapsed="0.000274"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-04-28T12:03:40.129863" level="INFO">${start} = 2026-03-29</msg>
+<var>${start}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>increment=-30d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.129644" elapsed="0.000247"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected: ${start} to ${end}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.130025" elapsed="0.000636"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${ui}</arg>
+<arg>${end}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.131091" elapsed="0.000746"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Last Month OK → ${ui}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.132050" elapsed="0.001148"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:40.108803" elapsed="0.024513"/>
+</kw>
+<doc>Validate correctness of date values displayed in dashboard cards including
+Today, Yesterday, Last 7 Days, and Last Month ranges.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.033687" elapsed="0.100216"/>
+</test>
+<test id="s1-t5" name="5.Validates All Dashboard Graph And Card" line="111">
+<kw name="Verify SKU Wise Section" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${VIEW_SKU_WISE_DROPDOWN_BUTTON}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.136478" elapsed="0.018113"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:40.155119" level="INFO">Clicking element 'xpath=//button[.//span[normalize-space()='View SKU Wise']]'.</msg>
+<arg>${VIEW_SKU_WISE_DROPDOWN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.154836" elapsed="0.065336"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>View SKU Wise dropdown button visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.220561" elapsed="0.000660"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Monitor the exceptional performance of the Top 5 SKUs</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.221433" elapsed="0.457693"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SKU Wise text visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.679506" elapsed="0.000619"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${SKU_TODAY_TOP_HEADER}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.680340" elapsed="0.293233"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SKU_TODAY_TOP_HEADER}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.973801" elapsed="0.021505"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${SKU_TODAY_TABLE}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.995540" elapsed="0.303407"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SKU_TODAY_TABLE}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.299144" elapsed="0.021800"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SKU_YESTERDAY_TOP_HEADER}</arg>
+<arg>1s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.321149" elapsed="0.018867"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SKU_YESTERDAY_TABLE}</arg>
+<arg>1s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.340216" elapsed="0.018537"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SKU_LAST7DAYS_TOP_HEADER}</arg>
+<arg>1s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.358999" elapsed="0.018778"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SKU_LAST7DAYS_TABLE}</arg>
+<arg>1s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.378004" elapsed="0.020018"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SKU_LASTMONTH_TOP_HEADER}</arg>
+<arg>1s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.398228" elapsed="0.019798"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SKU_LASTMONTH_TABLE}</arg>
+<arg>1s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.418326" elapsed="0.021706"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SKU Wise headers visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.440235" elapsed="0.012524"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HIDE_SKU_WISE_BTN}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.453273" elapsed="0.016173"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${HIDE_SKU_WISE_BTN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.469677" elapsed="0.280036"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:41.750196" level="INFO">Clicking element 'xpath=//button[.//span[normalize-space()='Hide SKU Wise']]'.</msg>
+<arg>${HIDE_SKU_WISE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.749936" elapsed="0.063464"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hide SKU Wise button clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.813627" elapsed="0.000606"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:03:40.136196" elapsed="1.678172"/>
+</kw>
+<kw name="Validate Graph" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:41.816648" elapsed="0.294521"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:42.111350" elapsed="0.030533"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} graph visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:42.142115" elapsed="0.000723"/>
+</kw>
+<arg>${UNITS_SOLD_PER_HOUR_GRAPH}</arg>
+<arg>Units Sold Per Hour</arg>
+<status status="PASS" start="2026-04-28T12:03:41.816075" elapsed="0.326904"/>
+</kw>
+<kw name="Validate Graph" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:42.144598" elapsed="0.310016"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:42.454852" elapsed="0.024901"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} graph visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:42.479997" elapsed="0.001005"/>
+</kw>
+<arg>${REVENUE_PER_HOUR_GRAPH}</arg>
+<arg>Revenue Per Hour</arg>
+<status status="PASS" start="2026-04-28T12:03:42.144148" elapsed="0.337239"/>
+</kw>
+<kw name="Validate Graph" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:42.484710" elapsed="0.326737"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:42.811714" elapsed="0.036587"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} graph visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:42.848890" elapsed="0.001496"/>
+</kw>
+<arg>${REVENUE_REPORT}</arg>
+<arg>Revenue Report</arg>
+<status status="PASS" start="2026-04-28T12:03:42.483645" elapsed="0.367265"/>
+</kw>
+<kw name="Validate Tables" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:42.853732" elapsed="0.311711"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.165937" elapsed="0.113986"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} table visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.280441" elapsed="0.001657"/>
+</kw>
+<arg>${SKU_WISE_REPORT}</arg>
+<arg>SKU Wise Report visible</arg>
+<status status="PASS" start="2026-04-28T12:03:42.852783" elapsed="0.429951"/>
+</kw>
+<kw name="Validate Graph" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.287346" elapsed="0.311924"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.599509" elapsed="0.024460"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} graph visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.624167" elapsed="0.000788"/>
+</kw>
+<arg>${CATEGORY_WISE_SALES_REPORT}</arg>
+<arg>Category Wise Sales Contribution</arg>
+<status status="PASS" start="2026-04-28T12:03:43.285569" elapsed="0.339673"/>
+</kw>
+<kw name="Validate Graph" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.626897" elapsed="0.309710"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.936804" elapsed="0.022018"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} graph visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.959030" elapsed="0.000615"/>
+</kw>
+<arg>${MAIN_CATEGORY_RANKING_GRAPH}</arg>
+<arg>Main Category Ranking</arg>
+<status status="PASS" start="2026-04-28T12:03:43.626409" elapsed="0.333408"/>
+</kw>
+<kw name="Asc And Desc Toggle" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.961748" elapsed="0.026663"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:43.988949" level="INFO">Clicking element 'xpath=//span[normalize-space()='Main Category Ranking']/ancestor::div[contains(@class,'chart-bg')]/preceding::input[@role='switch'][1]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:43.988691" elapsed="0.207639"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${mgs}Category Toggle Clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.196577" elapsed="0.001450"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${main_category_ranking_graph}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.198726" elapsed="0.059538"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Category Ranking graph visible after toggle</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.258510" elapsed="0.000656"/>
+</kw>
+<arg>${MAIN_CATEGORY_TOGGLE}</arg>
+<arg>main</arg>
+<arg>${MAIN_CATEGORY_RANKING_GRAPH}</arg>
+<status status="PASS" start="2026-04-28T12:03:43.961259" elapsed="0.298173"/>
+</kw>
+<kw name="Validate Graph" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.261711" elapsed="0.310920"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.572934" elapsed="0.035281"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} graph visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.608485" elapsed="0.000773"/>
+</kw>
+<arg>${SUB_CATEGORY_RANKING_GRAPH}</arg>
+<arg>Sub Category Ranking Graph</arg>
+<status status="PASS" start="2026-04-28T12:03:44.261156" elapsed="0.348252"/>
+</kw>
+<kw name="Asc And Desc Toggle" owner="Common_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.611458" elapsed="0.049862"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-28T12:03:44.661937" level="INFO">Clicking element 'xpath=//span[normalize-space()='Sub Category Ranking'] /ancestor::div[contains(@class,'chart-bg')] /preceding::input[@role='switch'][1]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.661585" elapsed="0.245020"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${mgs}Category Toggle Clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.906922" elapsed="0.000939"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${main_category_ranking_graph}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:44.908219" elapsed="0.215577"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Category Ranking graph visible after toggle</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:45.124058" elapsed="0.000943"/>
+</kw>
+<arg>${SUB_CATEGORY_TOGGLE}</arg>
+<arg>sub</arg>
+<arg>${SUB_CATEGORY_RANKING_GRAPH}</arg>
+<status status="PASS" start="2026-04-28T12:03:44.610819" elapsed="0.514434"/>
+</kw>
+<kw name="Validate Graph" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:45.126546" elapsed="0.654342"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:45.781427" elapsed="0.045026"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} graph visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:45.826872" elapsed="0.001232"/>
+</kw>
+<arg>${PRODUCT_LISTING_STATUS_GRAPH}</arg>
+<arg>Product Listing Status</arg>
+<status status="PASS" start="2026-04-28T12:03:45.126016" elapsed="0.702308"/>
+</kw>
+<kw name="Validate Graph" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:45.830590" elapsed="0.325286"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:46.156119" elapsed="0.038571"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} graph visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:46.194934" elapsed="0.000985"/>
+</kw>
+<arg>${ACCOUNT_HEALTH_GRAPH}</arg>
+<arg>Account health</arg>
+<status status="PASS" start="2026-04-28T12:03:45.829896" elapsed="0.366160"/>
+</kw>
+<kw name="Validate Cards" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:46.198804" elapsed="0.309576"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:46.508812" elapsed="0.048677"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} Card visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:46.557850" elapsed="0.001158"/>
+</kw>
+<arg>${SHIPPING_PERFORMANCE_CARD}</arg>
+<arg>shipping Performance</arg>
+<status status="PASS" start="2026-04-28T12:03:46.197939" elapsed="0.361433"/>
+</kw>
+<kw name="Validate Tables" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:46.562344" elapsed="0.336018"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:46.898578" elapsed="0.022868"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} table visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:46.921654" elapsed="0.000754"/>
+</kw>
+<arg>${CUSTOMER_SERVICE_PERFORMANCE_CARD}</arg>
+<arg>Customer Service Performance</arg>
+<status status="PASS" start="2026-04-28T12:03:46.561265" elapsed="0.361301"/>
+</kw>
+<kw name="Validate Graph" owner="Common_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-28T12:03:46.924271" elapsed="0.293766"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-28T12:03:47.218232" elapsed="0.021415"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${label} graph visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:47.239864" elapsed="0.000681"/>
+</kw>
+<arg>${POLICY_COMPLIANCE_CARD}</arg>
+<arg>Policy Compliance</arg>
+<status status="PASS" start="2026-04-28T12:03:46.923857" elapsed="0.316861"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>All dashboard cards verified successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T12:03:47.241744" elapsed="0.000696"/>
+</kw>
+<doc>Validate all dashboard graphs, tables, and performance cards including
+SKU reports, revenue graphs, category ranking, account health, and compliance.</doc>
+<status status="PASS" start="2026-04-28T12:03:40.135187" elapsed="7.108798"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-28T12:03:47.245521" elapsed="2.535620"/>
+</kw>
+<status status="PASS" start="2026-04-28T12:02:16.131038" elapsed="93.650229"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Dashboard" id="s1" pass="5" fail="0" skip="0">Dashboard</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
