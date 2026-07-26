@@ -5,7 +5,7 @@ Resource    ./resources/Ai-agents_Keywords.robot
 
     
 Suite Setup    Run Keywords
-...    Set Screenshot Directory    ../screenshots
+...    Set Screenshot Directory    ./screenshots
 ...    AND
 ...    Login Setup    https://mysellercentral.com/ai-agents/sign-in    shaheen@kascommerce.com    ++Pass@123
 
@@ -47,28 +47,66 @@ Suite Teardown   Close Browser
     Element Text Should Be    ${INVALID_ASIN_ERROR}    Enter a valid ASIN
 
 6.Verify Valid ASIN Entry, Marketplace Selection, ASIN Removal and Product Upload
-    Enter ASIN   B000GAYQJ0   Valid ASIN entered successfully.
     Select Marketplace For ASIN  ${ASIN_MARKETPLACE_DROPDOWN}   Amazon.com
+    Enter ASIN  B0CQ2CTKBH  Valid ASIN entered successfully.
+    Enter ASIN   B000GAYQJ0   Valid ASIN entered successfully.
     Enter ASIN   B0CJ4R8W4J   Valid ASIN entered successfully.
     Remove ASIN     B0CJ4R8W4J  ASIN removed successfully.
     Click Button    Upload   
 
-7.Add Product Description,Marketplace,Theme And Custom Scene
+7.Open Uploaded Image 
+    Open Image   1
+    Remove Image  ${IMAGE_REMOVE_BUTTON}
+
+8.Add Product Description,Marketplace,Theme And Custom Scene
     Click Button    Select all  
     Wait Until Page Contains   Describe your product:
     Enter Product Description    ${PRODUCT_DESCRIPTION}    Stylish wristwatch with a premium design, durable strap, precise timekeeping, and a comfortable fit, suitable for everyday wear, office, and casual occasions.
-    Select Marketplace  ${MARKETPLACE_DROPDOWN}   Amazon.com
-    Click Button  Themes  
+    Wait Until Page Contains  Marketplace:    2s
+    Select Marketplace  ${MARKETPLACE_DROPDOWN}  Amazon.com
+    Button Click  ${THEMES_TAB}   Themes  
     Select And Validate Theme    Modern Office
-    Click Button    Custom
-   Enter Scene Instructions    ${SCENE_INSTRUCTION_INPUT}    Display the wristwatch on a modern office desk beside a laptop and notebook with soft natural lighting, realistic shadows, and a premium professional workspace background.
-  
+    Wait Until Page Contains      Saving
+    Log To Console    Saving...
+    Button Click    ${CUSTOM_TAB}  Custom
+    Enter Scene Instructions    ${SCENE_INSTRUCTION_INPUT}    Display the wristwatch on a modern office desk beside a laptop and notebook with soft natural lighting, realistic shadows, and a premium professional workspace background.
+    Page Should Contain    Auto Saved
+    Log To Console    Changes auto-saved successfully.
 
+9.Verify Price And Generate Image
+    [Documentation]    Verify generate count, generate image, and validate copy/download pricing
+    Verify Selection, Remove And Generate Counts   ${UPLOADED_IMAGE_WITH_TICK}  ${REMOVE_BTN}  ${GENERATE_BTN}  ${SELECTION_LABEL}
+    #Verify Generate Count    ${UPLOADED_IMAGE_WITH_TICK}   ${GENERATE_BTN}  
+    Button Click   ${GENERATE_BTN}  Generate 
+    Wait Until Processing Disappears    ${PROCESSING_TEXT}
+    Check Generation Status   ${GENERATED_STATUS}  ${FALIED_STATUS}  
+    View Next Generated Image   ${GENERATED_IMAGE}  ${NEXT_IMAGE_BTN}   ${ACTIVE_IMAGE_CARD}  
+    View Next Generated Image   ${GENERATED_IMAGE}  ${PREVIOUS_IMAGE_BTN}   ${LEFT_ACTIVE_IMAGE_CARD}
+    Validate Copy And Download Icon Price    ${COPY_ICON}   Copy Image  ${DOWNLOAD_ICON}    Download(1)
 
-# 5.Verify Invalid Image And Invalid Bulk Excel Sheet
-#    [Documentation]    Upload invalid image and validate error message
-#     Upload Invalid Image    ${INVALID_IMAGE}   ${INVALID_IMAGE_ERROR}
-#     #Upload Invalid Excel Sheet  ${INVALID_EXCEL_SHEET}
+10.Verify Generated Images,Copy ,Download and Download All Functionality
+    [Documentation]    Validate generated image preview, copy action and download All functionality
+    Open Generated Images    ${GENERATED_IMAGE}     ${IMAGE_PREVIEW}
+    Validate Copy ,Download,Download All Button Price   ${COPY_BUTTON}   ₹20  ${DOWNLOAD}    ₹20  ${DOWNLOAD_ALL}  ₹60
+    Button Click   ${COPY_BUTTON}    copy 
+    Wait Until Page Contains   Image Copied!
+    Button Click   ${DOWNLOAD}    Download
+    Wait Until Page Contains   Image Downloaded
+    Button Click  ${DOWNLOAD_ALL}    Download All
+    Wait Until Page Contains     Images Downloaded      10s
+
+ 11.Verify Image Regeneration And Feedback Functionality
+    [Documentation]    Validate image regeneration flow with prompt input and submission
+    Image Regeneration   ${REGENERATE_BUTTON}  ${CLOSE_PROMPT}  ${INPUT_BOX}  ${SEND_BTN} 
+    Feedback for Image   ${THUMBS_UP_BTN}   ${THUMBS_DOWN_BTN}  Good Quality Lifestyle Image generated
+
+12.Verify Close And Download All Button  
+    [Documentation]    Validate download all images functionality and close action
+    Download All Images And Close  ${DOWNLOAD_ALL}   ${CLOSE_BUTTON}
+5.Verify Invalid Image And Invalid Bulk Excel Sheet
+   [Documentation]    Upload invalid image and validate error message
+    Upload Invalid Image    ${INVALID_IMAGE}   ${INVALID_IMAGE_ERROR}
+    #Upload Invalid Excel Sheet  ${INVALID_EXCEL_SHEET}
 
 # 6.Verify Valid Image 
 #     [Documentation]    Upload valid image 
@@ -80,16 +118,16 @@ Suite Teardown   Close Browser
     #Wait Until Page Contains   Select your images    5s
     #Click Element   ${SELECTION_ICON}
     #Log To Console  image selected
-    Wait Until Page Contains Element    ${PRODUCT_DESCRIPTION}     5s
+    #Wait Until Page Contains Element    ${PRODUCT_DESCRIPTION}     5s
     #Wait Until Page Contains    Describe your product   5s
     #Input Text   ${PRODUCT_DESCRIPTION}   s
-    Wait Until Page Contains   Describe your product:
-    Enter Product Description   ${PRODUCT_DESCRIPTION}  Stylish black bag with multiple compartments,designed for everyday use, travel, and office needs.
-    Select Marketplace    Amazon.com
-    Click Button  ${THEMES_TAB}   Themes
-    Select And Validate Theme    Modern Office
-    Click Button  ${CUSTOM_TAB}    Custom
-    Enter Scene Instructions   ${SCENE_INSTRUCTION_INPUT}  A modern professional carrying the black leather backpack while walking through a city street with soft natural lighting.
+    #Wait Until Page Contains   Describe your product:
+    #Enter Product Description   ${PRODUCT_DESCRIPTION}  Stylish black bag with multiple compartments,designed for everyday use, travel, and office needs.
+    # Select Marketplace    Amazon.com
+    # Click Button  ${THEMES_TAB}   Themes
+    # Select And Validate Theme    Modern Office
+    # Click Button  ${CUSTOM_TAB}    Custom
+    # Enter Scene Instructions   ${SCENE_INSTRUCTION_INPUT}  A modern professional carrying the black leather backpack while walking through a city street with soft natural lighting.
   
 # 8.Verify Deselect All,Remove,Selected Text
 #     [Documentation]    Verify image selection, deselection, and selection count
@@ -112,9 +150,8 @@ Suite Teardown   Close Browser
     
 # 10.Verify Generated Images,Copy ,Download and Download All Functionality
 #     [Documentation]    Validate generated image preview, copy action and download All functionality
-#     Open Generated Images    ${GENERATED_IMAGE}     ${IMAGE_PREVIEW}
+#   Open Generated Images    ${GENERATED_IMAGE}     ${IMAGE_PREVIEW}
 #     Validate Copy ,Download,Download All Button Price   ${COPY_BUTTON}   ₹20  ${DOWNLOAD}    ₹20  ${DOWNLOAD_ALL}  ₹20
-#     Log To Console    images Generated successfully
 #     Click Button  ${COPY_BUTTON}    copy 
 #     #Wait Until Page Contains   Image copied!
 #     #Log To Console  image copied successfully

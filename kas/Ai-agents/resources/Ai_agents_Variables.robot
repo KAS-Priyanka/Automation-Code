@@ -59,23 +59,24 @@ ${ASIN_MARKETPLACE_DROPDOWN}   xpath=//button[contains(@class,'inline-flex')][./
 ${INVALID_ASIN_ERROR}    xpath=//p[normalize-space()='Enter a valid ASIN']
 ${UPLOAD_BUTTON}    xpath=//button[.//span[normalize-space()='Upload']]
 
+${IMAGE_REMOVE_BUTTON}  xpath=(//div[contains(@class,'rounded-2xl') and .//img]//button[normalize-space()='Remove'])[2]
 
 ${PRODUCT_DESCRIPTION}    xpath=//input[@placeholder='Stainless steel water bottle with matte finish']
-${MARKETPLACE_DROPDOWN}    xpath=//button[.//span[normalize-space()='Amazon.in']]
+${MARKETPLACE_DROPDOWN}    xpath=//label[normalize-space()='Marketplace:']/following::button[1]
 ${AUTO_TAB}            xpath=//*[normalize-space()='Auto']
 ${THEMES_TAB}          xpath=//*[normalize-space()='Themes']
 #${SELECTED_THEME_TEXT}   xpath=//button[contains(@class,'bg-primary') and contains(@class,'text-white')]//span[1]
 ${SELECTED_THEME}    xpath=//p[contains(text(),'Selected:')]
 
 ${SCENE_INPUT}         xpath=//label[normalize-space()='Scene Instructions:']/following::input[1]
-${MOUNTAIN_ESCAPE}        xpath=//p[normalize-space()='Mountain Escape']/ancestor::button
-${MODERN_OFFICE}          xpath=//p[normalize-space()='Modern Office']/ancestor::button
-${COZY_HOMES}             xpath=//p[normalize-space()='Cozy Homes']/ancestor::button
-${URBAN_STREET_VIBE}      xpath=//p[normalize-space()='Urban Street Vibe']/ancestor::button
-${SUNRISE_FIELDS}         xpath=//p[normalize-space()='Sunrise Over Fields']/ancestor::button
-${ELEGANT_DINING}         xpath=//p[normalize-space()='Elegant Dining']/ancestor::button
-${WINTER_WONDERLAND}      xpath=//p[normalize-space()='Winter Wonderland']/ancestor::button
-${SPORTS_STADIUM}         xpath=//p[normalize-space()='Sports Stadium']/ancestor::button
+# ${MOUNTAIN_ESCAPE}        xpath=//p[normalize-space()='Mountain Escape']/ancestor::button
+# ${MODERN_OFFICE}          xpath=//p[normalize-space()='Modern Office']/ancestor::button
+# ${COZY_HOMES}             xpath=//p[normalize-space()='Cozy Homes']/ancestor::button
+# ${URBAN_STREET_VIBE}      xpath=//p[normalize-space()='Urban Street Vibe']/ancestor::button
+# ${SUNRISE_FIELDS}         xpath=//p[normalize-space()='Sunrise Over Fields']/ancestor::button
+# ${ELEGANT_DINING}         xpath=//p[normalize-space()='Elegant Dining']/ancestor::button
+# ${WINTER_WONDERLAND}      xpath=//p[normalize-space()='Winter Wonderland']/ancestor::button
+# ${SPORTS_STADIUM}         xpath=//p[normalize-space()='Sports Stadium']/ancestor::button
 
 ${CUSTOM_TAB}          xpath=//*[normalize-space()='Custom']
 ${SCENE_INSTRUCTION_INPUT}  xpath=//label[contains(text(),'Style Instructions')]/following::input[1]
@@ -109,22 +110,26 @@ ${DOWNLOAD_BUTTON}    xpath=//button[contains(.,'Download')]
 ${REMOVE_BUTTON}    xpath=//button[contains(.,'Remove')]
 ${UPLOADED_IMAGE_PREVIEW}  xpath=//img[contains(@class,'tour-spotlight-image')]
 #${UPLOADED_IMAGE_WITH_TICK}    xpath=//div[contains(@class,'tour-spotlight-shell') and contains(@class,'border-[#4F96E2]')]/ancestor::button
-${UPLOADED_IMAGE_WITH_TICK}  xpath=//span[contains(@class,'tour-checkbox') and contains(@class,'bg-[#1573D6]')]
-${SELECTED_TEXT}   xpath=//span[contains(normalize-space(),'selected')]
+${UPLOADED_IMAGE_WITH_TICK}  xpath=//div[@role='button']//div[contains(@class,'bg-[#1573D6]')][.//*[name()='svg']]
+${REMOVE_BTN}       xpath=//button[contains(.,'Remove')]
+${GENERATE_BTN}     xpath=//button[contains(.,'Generate')]
+${SELECTION_LABEL}  xpath=//span[contains(.,'selected')]
 ${SELECT_ALL_BUTTON}    xpath=//button[normalize-space()='Select all']
-${GENERATE_BTN}        xpath=//button[.//text()[normalize-space()='Generate']]
 ${PRICE}    xpath=(//span[contains(@class,'body-text-secondary') and contains(text(),'₹')])[1]
 
 ${PROCESSING_TEXT}    xpath=//*[contains(text(),'Processing')]
 ${GENERATED_STATUS}    xpath=//span[contains(text(),'Generated')]
-${GENERATED_IMAGE}    xpath=//img[contains(@class,'tour-spotlight-image')]/ancestor::button[@type='button']
+${FALIED_STATUS}    xpath=//span[contains(text(),'Failed')]
+${GENERATED_IMAGE}    xpath=//div[@role='button'][following-sibling::span//span[normalize-space()='Generated']]
+${PREVIOUS_IMAGE_BTN}    xpath=(//div[@role='button'])[1]//button[contains(@class,'left-[5px]')]
+${NEXT_IMAGE_BTN}    xpath=(//button[contains(@class,'right-[5px')])[last()]
 
 ${COPY_ICON}    xpath=(//button[contains(@class,'w-8') and contains(@class,'h-8')])[2]
-
 ${DOWNLOAD_ICON}   xpath=(//button[contains(@class,'w-8') and contains(@class,'h-8')])[3]
 ${IMAGE_PREVIEW}     xpath=//img[contains(@alt,'Generated')]
+${ACTIVE_IMAGE_CARD}    xpath=//div[@role='button'][.//button[contains(@class,'left-[5px]') and not(@disabled)] and .//button[contains(@class,'right-[5px]') and not(@disabled)]]
+${LEFT_ACTIVE_IMAGE_CARD}  xpath=//div[@role='button'][.//img[contains(@class,'tour-spotlight-image')] and .//button[contains(@class,'left-[5px]') and not(@disabled)] and not(.//button[contains(@class,'right-[5px]') and not(@disabled)])]
 ${DOWNLOAD_BTN}  xpath=//button[contains(text(),'Download')]
-
 ${COPY_BUTTON}        xpath=(//button[.//span[text()='Copy']])[1]
 ${DOWNLOAD}    xpath=(//button[.//span[text()='Download']])[1]
 ${REGENERATE_BUTTON}  xpath=(//button[contains(text(),'Regenerate')])[1]

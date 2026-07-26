@@ -28,7 +28,7 @@ Open Application
     Maximize Browser Window
     Set Selenium Implicit Wait    10s
     Wait Until Element Is Visible    ${PAGE_HEADING}    10s
-    Log To Console    Application opened successfully.
+    Log To Console    Application Opened Successfully.
 
 Enter Login Credentials And Submit
     [Arguments]    ${email}    ${password}
@@ -49,13 +49,12 @@ Login Setup
     Enter Login Credentials And Submit    ${email}    ${password}
 
 
-
 #---button click---
-# Click Button
-#     [Arguments]    ${locator}  ${label}
-#     Wait Until Element Is Visible    ${locator}    5s
-#     Click Element    ${locator}
-#     Log To Console    ${label} visible and clicked successfully
+Button Click 
+    [Arguments]    ${locator}  ${label}
+    Wait Until Element Is Visible    ${locator}    5s
+    Click Element    ${locator}
+    Log To Console    ${label} visible and clicked successfully
 
 Click Button
     [Arguments]    ${button_name}
@@ -258,7 +257,24 @@ Click Upload Button
     Click Element    ${button_locator}
     Log    Upload button clicked successfully.
 
-
+Open Image
+    [Arguments]    ${index}=1
+    ${card}=    Set Variable    xpath=(//div[@role='button' and contains(@class,'aspect-square')])[${index}]
+    Wait Until Element Is Visible    ${card}    20s
+    Wait Until Element Is Not Visible    xpath=//div[contains(@class,'loading')]    20s
+    Scroll Element Into View         ${card}
+    Mouse Over                       ${card}
+    Click Element                    ${card}
+    Wait Until Element Is Visible    xpath=//button[normalize-space()='Remove']/ancestor::div[contains(@class,'relative rounded-2xl')]    10s
+    Element Should Be Visible        xpath=//button[normalize-space()='Remove']/ancestor::div[contains(@class,'relative rounded-2xl')]
+    Log To Console    Image preview opened successfully.
+Remove Image
+    [Arguments]    ${remove_button}
+    Wait Until Element Is Visible    ${remove_button}    10s
+    Scroll Element Into View         ${remove_button}
+    Click Element                    ${remove_button}
+    Wait Until Element Is Not Visible    ${remove_button}    10s
+    Log To Console    Image removed successfully.
 
 Enter Product Description
     [Arguments]  ${product_description}  ${product_text}
@@ -270,7 +286,6 @@ Enter Product Description
 
 Select Marketplace
     [Arguments]        ${marketplace_dropdown}  ${option}
-    Wait Until Page Contains  Marketplace:    2s
     Click Element    ${marketplace_dropdown}
     ${option_locator}=    Set Variable    xpath=//span[normalize-space()='${option}']
     Wait Until Element Is Visible    ${option_locator}    10s
@@ -296,17 +311,17 @@ Select And Validate Theme
 
     Log To Console    Theme ${theme} selected successfully
 
-Verify All Themes Displayed
-    Element Should Be Visible    ${MOUNTAIN_ESCAPE}
-    Element Should Be Visible    ${MODERN_OFFICE}
-    Element Should Be Visible    ${COZY_HOMES}
-    Element Should Be Visible    ${URBAN_STREET_VIBE}
-    Element Should Be Visible    ${SUNRISE_FIELDS}
-    Element Should Be Visible    ${ELEGANT_DINING}
-    Element Should Be Visible    ${WINTER_WONDERLAND}
-    Element Should Be Visible    ${SPORTS_STADIUM}
+# Verify All Themes Displayed
+#     Element Should Be Visible    ${MOUNTAIN_ESCAPE}
+#     Element Should Be Visible    ${MODERN_OFFICE}
+#     Element Should Be Visible    ${COZY_HOMES}
+#     Element Should Be Visible    ${URBAN_STREET_VIBE}
+#     Element Should Be Visible    ${SUNRISE_FIELDS}
+#     Element Should Be Visible    ${ELEGANT_DINING}
+#     Element Should Be Visible    ${WINTER_WONDERLAND}
+#     Element Should Be Visible    ${SPORTS_STADIUM}
 
-    Log To Console    All themes are displayed successfully
+#     Log To Console    All themes are displayed successfully
 
 Enter Scene Instructions
     [Arguments]   ${scene_instructions}   ${text}
@@ -315,7 +330,25 @@ Enter Scene Instructions
     Scroll Element Into View          ${scene_instructions}
     Clear Element Text                ${scene_instructions}
     Input Text                       ${scene_instructions}    ${text}
+Check Generation Status
+    [Arguments]    ${generated_locator}    ${failed_locator}
 
+    ${generated}=    Run Keyword And Return Status
+    ...    Element Should Be Visible    ${generated_locator}
+    IF    ${generated}
+        Log To Console    Image generated successfully
+    ELSE
+        ${failed}=    Run Keyword And Return Status
+        ...    Element Should Be Visible    ${failed_locator}
+
+        IF    ${failed}
+            Mouse Over      xpath=//button[@aria-label='Regenerate'] 
+            Wait Until Page Contains  Regenerate    5s 
+            Click Element    xpath=//button[@aria-label='Regenerate']
+        ELSE
+            Fail    Neither Generated nor Failed status is displayed.
+        END
+    END
 Upload Invalid Image
     [Arguments]    ${file_path}    ${invalid_image_error}
     Choose File    ${FILE_UPLOAD_INPUT}    ${file_path}
@@ -382,34 +415,49 @@ Select Image
     Wait Until Element Is Visible    ${remove_btn}    5s
     Log To Console    Image selected successfully
 
-Verify Selection Count
-    [Arguments]  ${selected_image}  
-    ${count}=    Get Element Count    ${selected_image}
-    Log To Console    Actual selected count: ${count}
+# Verify Selection Count
+#     [Arguments]  ${selected_image}  
+#     ${count}=    Get Element Count    ${selected_image}
+#     Log To Console    Actual selected count: ${count}
 
-    # Get UI text (e.g., "2 selected")
-    ${ui_text}=    Get Text    ${SELECTED_TEXT}
-    Log To Console    UI text: ${ui_text}
+#     # Get UI text (e.g., "2 selected")
+#     ${ui_text}=    Get Text    ${SELECTED_TEXT}
+#     Log To Console    UI text: ${ui_text}
 
-    # Extract number from UI text
-    ${ui_count}=    Evaluate    int('${ui_text}'.split()[0])
+#     # Extract number from UI text
+#     ${ui_count}=    Evaluate    int('${ui_text}'.split()[0])
 
-    Log To Console    UI count: ${ui_count}
+#     Log To Console    UI count: ${ui_count}
 
-    # Compare both
-    Should Be Equal As Integers    ${count}    ${ui_count}
-    Log To Console  expected and UI count is same
+#     # Compare both
+#     Should Be Equal As Integers    ${count}    ${ui_count}
+#     Log To Console  expected and UI count is same
+
+Verify Selection, Remove And Generate Counts
+    [Arguments]    ${selected_image_locator}    ${remove_btn}    ${generate_btn}    ${selection_label}
+
+    ${selected_count}=    Get Element Count    ${selected_image_locator}
+    Wait Until Element Is Visible    ${remove_btn}       10s
+    Wait Until Element Is Visible    ${generate_btn}     10s
+    Wait Until Element Is Visible    ${selection_label}  10s
+    ${remove_text}=       Get Text    ${remove_btn}
+    ${generate_text}=     Get Text    ${generate_btn}
+    ${selection_text}=    Get Text    ${selection_label}
+    Should Contain    ${remove_text}      (${selected_count})
+    Should Contain    ${generate_text}    (${selected_count})
+    Should Be Equal As Strings    ${selection_text}    ${selected_count} selected
+    Log To Console    Selection count is correct: ${selection_text}
+    Log To Console     Remove count is correct: ${remove_text}
+    Log To Console     Generate count is correct: ${generate_text}
+
 
 Verify Generate Count 
     [Arguments]    ${selected_image}    ${genarated_btn}   
-
     ${count}=    Get Element Count    ${selected_image}
-
     ${generate_text}=    Get Text    ${genarated_btn}
     Log To Console    Generate Text: ${generate_text}
     Should Contain    ${generate_text}    (${count})
     Log To Console    Generate count ${count} is displayed correctly on button
-
     Wait Until Element Is Visible    ${genarated_btn}      10s
     Log To Console    Generate button is enabled with correct count
     Click Element  ${genarated_btn}  
@@ -418,14 +466,10 @@ Verify Generate Count
    
 Remove Selected Image
     [Arguments]    ${index}  ${remove_btn}  ${uploaded_image_preview}
-    
     ${before_count}=    Get Element Count     ${uploaded_image_preview}
-    
     Click Element    (//button[.//img])[${index}]
-    
     Wait Until Element Is Visible   ${remove_btn}    10s
     Click Element    ${remove_btn}
-    
     ${after_count}=    Get Element Count     ${uploaded_image_preview}
     Should Be True    ${after_count} < ${before_count}
     Log To Console    Image removed successfully, remaining images: ${after_count}
@@ -474,6 +518,7 @@ Wait Until Processing Disappears
     [Arguments]    ${processing_locator}
     Wait Until Keyword Succeeds    5 min    5 sec
     ...    Element Should Not Be Visible    ${processing_locator}
+    
 Validate Copy And Download Icon Price
     [Arguments]    ${copy_icon}   ${tooltip1}  ${download_icon}  ${tooltip2}  
     Element Should Be Visible     ${copy_icon} 
@@ -487,6 +532,7 @@ Validate Copy And Download Icon Price
     ...    Page Should Contain    ${tooltip2}
     Log To Console   Both the Tooltip visible successfully
     Mouse Up    ${download_icon}
+    Wait Until Element Is Not Visible    ${tooltip2}    5s
 
 Validate Copy ,Download,Download All Button Price
     [Arguments]    ${copy_icon}   ${tooltip1}  ${download_icon}  ${tooltip2}  ${download_all_button}  ${tooltip3}
@@ -547,6 +593,15 @@ Verify Wallet Deduction On Copy
 
     Should Be Equal    ${after}    ${expected}
     Log To Console    Wallet deduction on copy action verified successfully. Deducted: ₹${deduct_value}
+View Next Generated Image
+    [Arguments]   ${generated_image_card}  ${next_image_btn}    ${image_locator}
+
+    Mouse Over   ${generated_image_card}
+    Wait Until Element Is Visible    ${next_image_btn}    10s
+    Click Element    ${next_image_btn}
+    Wait Until Element Is Visible    ${image_locator}    10s
+
+    Log To Console    Next generated image displayed successfully.
 
 Open Generated Images  
     [Arguments]    ${generated_image}   ${image_preview}
@@ -751,7 +806,7 @@ Select Date Range And Validate
     ...    Validate Year Range    ${from_date}    ${to_date}
 
     # Click Apply
-    Click Button   ${APPLY_BTN}  Apply 
+    Button Click   ${APPLY_BTN}  Apply 
 
 Validate Week Range
     [Arguments]    ${from_date}    ${to_date}
