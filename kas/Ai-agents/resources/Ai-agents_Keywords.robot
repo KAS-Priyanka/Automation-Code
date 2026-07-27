@@ -284,6 +284,15 @@ Enter Product Description
     Input Text                       ${product_description}    ${product_text}
     Log To Console                   Product description entered successfully
 
+Enter Key Features
+    [Arguments]    ${feature_locator}    ${feature_text}
+
+    Wait Until Element Is Visible    ${feature_locator}    10s
+    Clear Element Text    ${feature_locator}
+    Input Text    ${feature_locator}    ${feature_text}
+    ${actual_text}=    Get Value    ${feature_locator}
+    Should Be Equal    ${actual_text}    ${feature_text}
+
 Select Marketplace
     [Arguments]        ${marketplace_dropdown}  ${option}
     Click Element    ${marketplace_dropdown}
@@ -523,12 +532,12 @@ Validate Copy And Download Icon Price
     [Arguments]    ${copy_icon}   ${tooltip1}  ${download_icon}  ${tooltip2}  
     Element Should Be Visible     ${copy_icon} 
     Mouse Over     ${copy_icon}    
-    Wait Until Keyword Succeeds    20x    1s
+    Wait Until Keyword Succeeds    10x    1s
     ...    Page Should Contain    ${tooltip1}
 
     Element Should Be Visible    ${download_icon}
     Mouse Over   ${download_icon}
-    Wait Until Keyword Succeeds    20x    1s
+    Wait Until Keyword Succeeds    10x    1s
     ...    Page Should Contain    ${tooltip2}
     Log To Console   Both the Tooltip visible successfully
     Mouse Up    ${download_icon}
@@ -600,8 +609,8 @@ View Next Generated Image
     Wait Until Element Is Visible    ${next_image_btn}    10s
     Click Element    ${next_image_btn}
     Wait Until Element Is Visible    ${image_locator}    10s
-
     Log To Console    Next generated image displayed successfully.
+    sleep   2s
 
 Open Generated Images  
     [Arguments]    ${generated_image}   ${image_preview}
@@ -629,7 +638,7 @@ Image Regeneration
         Wait Until Keyword Succeeds    10s    1s
         ...    Page Should Contain    ${remaining} remaining
 
-        Log To Console    🔍 Before click: ${remaining} remaining
+        Log To Console     Before click: ${remaining} remaining
         Click Element    ${regenerate_btn}
 
         Wait Until Element Is Visible    ${input_box}    5s
@@ -638,7 +647,7 @@ Image Regeneration
         Click Element    ${close_prompt}
         Sleep   2s
         Click Element    ${regenerate_btn}
-        Input Text    ${input_box}    Stylish leather handbag in a modern lifestyle setting
+        Input Text    ${input_box}    Elegant women's wristwatch worn by a stylish woman in a modern lifestyle setting with natural lighting
         Wait Until Element Is Visible  ${send_btn}    5s 
         sleep  2s
         Click Element    ${send_btn}
@@ -653,9 +662,9 @@ Image Regeneration
     END
 
 Feedback for Image
-    [Arguments]   ${thumps_up}  ${thumps_down}  ${feedback_message}
+    [Arguments]  ${generated_image}  ${thumps_up}  ${thumps_down}  ${feedback_message}
      # Hover on first generated image
-    ${img}=    Get WebElement    xpath=(//img[contains(@alt,'Generated')])[1]
+    ${img}=    Get WebElement   ${generated_image}
     Mouse Over    ${img}
     Click Element    ${thumps_down}
     Click Element     ${feedback_close_btn}
@@ -667,9 +676,9 @@ Feedback for Image
 
 Download All Images And Close
     [Arguments]   ${downlaod_all}  ${close}
-    # Click Download All
     Wait Until Element Is Visible    ${download_all}    10s
     Click Element                   ${download_all}
+    #Wait Until Page Contains     Images Downloaded      10s
     Log To Console  download All Images successfully
     Wait Until Element Is Visible    ${close}    10s
     Click Element                   ${close}

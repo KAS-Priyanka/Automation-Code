@@ -62,6 +62,7 @@ ${UPLOAD_BUTTON}    xpath=//button[.//span[normalize-space()='Upload']]
 ${IMAGE_REMOVE_BUTTON}  xpath=(//div[contains(@class,'rounded-2xl') and .//img]//button[normalize-space()='Remove'])[2]
 
 ${PRODUCT_DESCRIPTION}    xpath=//input[@placeholder='Stainless steel water bottle with matte finish']
+${KEY_FEATURES_INPUT}     xpath=//label[normalize-space()='Key Features:']/following::input[1]
 ${MARKETPLACE_DROPDOWN}    xpath=//label[normalize-space()='Marketplace:']/following::button[1]
 ${AUTO_TAB}            xpath=//*[normalize-space()='Auto']
 ${THEMES_TAB}          xpath=//*[normalize-space()='Themes']
@@ -137,8 +138,16 @@ ${INPUT_BOX}       xpath=//input[@placeholder='Enter prompt (optional)']
 ${REGENERATING_TEXT}  xpath=//div[text()='Regenerating...']
 ${SEND_BTN}       xpath=//button[@aria-label='Submit prompt']
 ${CLOSE_PROMPT}       xpath=//button[@aria-label='Close prompt']
-${THUMBS_UP_BTN}    xpath=//button[@aria-label='Like']
-${THUMBS_DOWN_BTN}    xpath=//button[@aria-label='Dislike']
+${GENERATED_IMAGE1}    xpath=(//img[contains(@alt,'Generated')])[1]
+${GENERATED_IMAGE2}    xpath=(//img[contains(@alt,'Generated')])[2]
+${GENERATED_IMAGE3}    xpath=(//img[contains(@alt,'Generated')])[3]
+
+${THUMBS_UP_BTN1}    xpath=(//button[@aria-label='Like'])[1]
+${THUMBS_DOWN_BTN1}    xpath=(//button[@aria-label='Dislike'])[1]
+${THUMBS_UP_BTN2}    xpath=(//button[@aria-label='Like'])[2]
+${THUMBS_DOWN_BTN2}    xpath=(//button[@aria-label='Dislike'])[2]
+${THUMBS_UP_BTN3}    xpath=(//button[@aria-label='Like'])[3]
+${THUMBS_DOWN_BTN3}    xpath=(//button[@aria-label='Dislike'])[3]
 ${FEEDBACK_POPUP}    xpath=//div[contains(@class,'absolute') and .//h3[text()='Tell us why?']]
 ${FEEDBACK_CLOSE_BTN}  xpath=//button[@aria-label='Close feedback']
 ${FEEDBACK_TEXTAREA}    xpath=//textarea[@placeholder='Add comment']
@@ -149,7 +158,7 @@ ${DOWNLOAD_ALL}    xpath=//button[normalize-space()='Download all']
 ${IMAGE_NO}    xpath=//button[contains(@class,'group')]//img
 ${IMAGE_BLUE_TICK}   xpath=//span[contains(@class,'tour-checkbox')]
 ${AI_AGENTS_TAB}    xpath=//span[normalize-space()='AI Agents']
-${LIFESTYLE_PHOTO_CREATOR_TAB}    xpath=//span[contains(text(),'Lifestyle Photo Creator')]
+${LIFESTYLE_Image_CREATOR_TAB}    xpath=//span[contains(text(),'Lifestyle Image Creator')]
 
 ${MARKETPLACES_BTN}   xpath=//button[.//span[text()='Marketplaces']]
 
@@ -164,12 +173,12 @@ ${HISTORY_PREVIEW}   xpath=//div[contains(@class,'group')]//img
 ${HISTORY_PREVIEW_CLOSE_BTN}     xpath=//div[contains(@class,'flex justify-end')]//button
 #---infographic Creator----
 
-${INFOGRAPHIC_CARD}     xpath=//h3[normalize-space()='Infographic Creator']/ancestor::div[contains(@class,'cursor-pointer')]
-${INFOGRAPHIC_TITLE}    xpath=//h3[normalize-space()='Infographic Creator']
-${INFOGRAPHIC_PRICE}    xpath=//h3[normalize-space()='Infographic Creator']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹20']
-${INFOGRAPHIC_AGENT_LAUNCH_BTN}  xpath=//h3[normalize-space()='Infographic Creator']/ancestor::div[contains(@class,'cursor-pointer')]//button[normalize-space()='Launch']
+${INFOGRAPHIC_IMAGE_CREATOR_CARD}     xpath=//h3[normalize-space()='Infographic Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]
+${INFOGRAPHIC_TITLE}    xpath=//h3[normalize-space()='Infographic Image Creator']
+${INFOGRAPHIC_PRICE}    xpath=//h3[normalize-space()='Infographic Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹20']
+${INFOGRAPHIC_AGENT_LAUNCH_BTN}  xpath=//h3[normalize-space()='Infographic Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//button[normalize-space()='Launch']
 
-${INFOGRAPHIC_CREATOR_TAB}    xpath=//span[normalize-space()='Infographic Creator']
+${INFOGRAPHIC__IMAGE_CREATOR_TAB}    xpath=//span[normalize-space()='Infographic Image Creator']
 
 #----history-----
 ${CREATED_DATE_LIST}  xpath=//p[contains(.,'Created At')]//span

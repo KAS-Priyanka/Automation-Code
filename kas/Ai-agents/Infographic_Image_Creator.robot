@@ -5,13 +5,10 @@ Resource    ./resources/Ai-agents_Keywords.robot
     
 
 Suite Setup    Run Keywords
-...    Disable Screenshots
+...    Set Screenshot Directory    ./screenshots
 ...    AND
 ...    Login Setup    https://mysellercentral.com/ai-agents/sign-in    shaheen@kascommerce.com    ++Pass@123
 Suite Teardown   Close Browser
-
-
-
 
 
 *** Test Cases ***
@@ -33,117 +30,79 @@ Suite Teardown   Close Browser
 3.Launch Infographic Agent
     [Documentation]    Validate AI agent card, launch Infographic Creator
     Verify Wallet Section   ${WALLET_LABEL}     ${WALLET_VALUE}
-    Verify AI-agents Card  ${INFOGRAPHIC_CARD}   ${INFOGRAPHIC_TITLE}   ${INFOGRAPHIC_PRICE}  ${INFOGRAPHIC_AGENT_LAUNCH_BTN}
-    Launch AI Agent   Infographic Creator
-    
-4.Verify Infographic Creator Page,Wallet Section And Template Download
-    [Documentation]    Verify  Infographic Creator page,wallet section And Template Download button
-    Wait Until Page Contains  Infographic Creator    5s   
-    Log To Console    Infographic Creator page loaded successfully
-    Verify Wallet Section   ${WALLET_LABEL}     ${WALLET_VALUE}
-    Click Button  ${TEMPLATE_DOWNLOAD_BUTTON}   Template Download
+    Verify AI-agents Card  ${INFOGRAPHIC_IMAGE_CREATOR_CARD}   ${INFOGRAPHIC_TITLE}   ${INFOGRAPHIC_PRICE}  ${INFOGRAPHIC_AGENT_LAUNCH_BTN}
+    Launch AI Agent   Infographic Image Creator
+    Button Click  ${TEMPLATE_DOWNLOAD_BUTTON}   Template Download
     Click Element   ${HELP_BTN}   
-
-5.Verify Invalid Image And Bulk Excel Sheet
-    [Documentation]    Upload invalid image and validate error message
-    Upload Invalid Image    ${INVALID_IMAGE}   ${INVALID_IMAGE_ERROR}
-    #Upload Invalid Excel Sheet  ${INVALID_EXCEL_SHEET}
-
-6.Verify Valid Image 
-    [Documentation]    Upload valid image
-    Upload Product Image    ${VALID_IMAGE} 
-
-7.Add Product Description,marketplace
-    [Documentation]    Provide product description, choose marketplace and theme, add custom scene
-    #Wait Until Page Contains   Select your images    5s
-    #Click Element   ${SELECTION_ICON}
-    #Log To Console  image selected
-    Wait Until Page Contains Element    ${PRODUCT_DESCRIPTION}     5s
-    Wait Until Page Contains    Describe your product   5s
-    Input Text   ${PRODUCT_DESCRIPTION}   s
-    Wait Until Page Contains   Describe your product:
-    Enter Product Description   ${PRODUCT_DESCRIPTION}  tylish black bag with multiple compartments,designed for everyday use, travel, and office needs.
-    Select Marketplace    Amazon.com
-
-    # Select And Validate Theme    Urban Street Vibe
-
-    # Click Button  ${CUSTOM_TAB}    Custom
-    # Enter Scene Instructions   ${SCENE_INSTRUCTION_INPUT}  A premium lifestyle scene showing the Milton Duo DLX 1000 Thermosteel Water Bottle placed on a modern office desk with natural lighting
     
-    # Upload Multiple Product Images
+5.Enter Invalid ASIN And Verify Error
+    Enter ASIN   B0FXGVJS   Invalid ASIN entered.
+    Element Text Should Be    ${INVALID_ASIN_ERROR}    Enter a valid ASIN
 
-8.Verify Deselect All,Remove,Selected Text
-    [Documentation]    Verify image selection, deselection, and selection count
-    Wait Until Element Is Visible     ${SELECT_ALL_BUTTON}    10s
-    Element Should Be Visible        ${REMOVE_BUTTON}
-    Element Should Be Visible        ${SELECTED_TEXT}
-    Verify Image Selection      ${UPLOADED_IMAGE_PREVIEW}
-    Verify Image Deselection   ${UPLOADED_IMAGE_PREVIEW}
-    Verify Image Selection      ${UPLOADED_IMAGE_PREVIEW}
-    Verify Selection Count    ${UPLOADED_IMAGE_WITH_TICK}
+6.Verify Valid ASIN Entry, Marketplace Selection, ASIN Removal and Product Upload
+    Select Marketplace For ASIN  ${ASIN_MARKETPLACE_DROPDOWN}   Amazon.com
+    Enter ASIN  B0CQ2CTKBH  Valid ASIN entered successfully.
+    Enter ASIN   B000GAYQJ0   Valid ASIN entered successfully.
+    Enter ASIN   B0CJ4R8W4J   Valid ASIN entered successfully.
+    Remove ASIN     B0CJ4R8W4J  ASIN removed successfully.
+    Click Button    Upload   
+
+7.Open Uploaded Image 
+    Open Image   1
+    Remove Image  ${IMAGE_REMOVE_BUTTON}
+
+8.Add Product Description,Marketplace,Theme And Custom Scene
+    Click Button    Select all  
+    Wait Until Page Contains   Describe your product:
+    Enter Product Description    ${PRODUCT_DESCRIPTION}    Stylish wristwatch with a premium design, durable strap, precise timekeeping, and a comfortable fit, suitable for everyday wear, office, and casual occasions.
+    Enter Key Features   ${KEY_FEATURES_INPUT}  Quartz movement, Water resistant, Stainless steel strap, Scratch-resistant glass
+    Wait Until Page Contains      Saving
+    Log To Console    Saving...
+    Wait Until Page Contains  Marketplace:    2s
+    Select Marketplace  ${MARKETPLACE_DROPDOWN}  Amazon.com
+    Page Should Contain    Auto Saved
+    Log To Console    Changes auto-saved successfully.
 
 9.Verify Price And Generate Image
     [Documentation]    Verify generate count, generate image, and validate copy/download pricing
-    Verify Generate Count    ${UPLOADED_IMAGE_WITH_TICK}   ${GENERATE_BTN}   
-    Click Element          ${GENERATE_BTN}
+    Verify Selection, Remove And Generate Counts   ${UPLOADED_IMAGE_WITH_TICK}  ${REMOVE_BTN}  ${GENERATE_BTN}  ${SELECTION_LABEL}
+    Button Click   ${GENERATE_BTN}  Generate 
     Wait Until Processing Disappears    ${PROCESSING_TEXT}
-    Element Should Be Visible    ${GENERATED_IMAGE}
-    Element Should Be Visible  ${GENERATED_STATUS}
-    Log To Console    Image generated successfully
-    Validate Copy And Download Icon Price    ${COPY_ICON}   ₹20  ${DOWNLOAD_ICON}    ₹20
-    
-10.Verify Generated Images,Copy And Download Functionality
-    [Documentation]    Open generated image, validate copy functionality, and verify download
+    Check Generation Status   ${GENERATED_STATUS}  ${FALIED_STATUS}  
+    View Next Generated Image   ${GENERATED_IMAGE}  ${NEXT_IMAGE_BTN}   ${ACTIVE_IMAGE_CARD}  
+    View Next Generated Image   ${GENERATED_IMAGE}  ${NEXT_IMAGE_BTN}  ${LEFT_ACTIVE_IMAGE_CARD}
+
+10.Verify Generated Images,Copy Functionality
+    [Documentation]    Validate generated image preview, copy action and download All functionality
     Open Generated Images    ${GENERATED_IMAGE}     ${IMAGE_PREVIEW}
-    Validate Copy ,Download,Download All Button Price   ${COPY_BUTTON}   ₹20  ${DOWNLOAD}    ₹20  ${DOWNLOAD_ALL}  ₹20
-    Log To Console    images Generated successfully
-    Click Button  ${COPY_BUTTON}    copy 
-    Wait Until Page Contains   Image copied!
-    Log To Console  image copied successfully
-    Wait Until Page Does Not Contain  Image copied!
-    Click Button  ${DOWNLOAD}    Download
-    Log To Console  image download successfully
+    Button Click   ${COPY_BUTTON}    copy 
+    Wait Until Page Contains   Image Copied!
 
-11.Verify Image Regeneration
+ 11.Verify Image Regeneration ,Feedback And Download Functionality
     [Documentation]    Validate image regeneration flow with prompt input and submission
-    Image Regeneration   ${REGENERATE_BUTTON}  ${CLOSE_PROMPT}  ${INPUT_BOX}  ${SEND_BTN} 
-    Feedback for Image   ${THUMBS_UP_BTN}   ${THUMBS_DOWN_BTN}  Good Quality Infographic image generated
-
-12.Verify Close And Download All Button Functionality
+    #Image Regeneration   ${REGENERATE_BUTTON}  ${CLOSE_PROMPT}  ${INPUT_BOX}  ${SEND_BTN} 
+    Feedback for Image    ${GENERATED_IMAGE1}    ${THUMBS_UP_BTN1}    ${THUMBS_DOWN_BTN1}    Good quality lifestyle image generated.
+    Feedback for Image    ${GENERATED_IMAGE2}    ${THUMBS_UP_BTN2}    ${THUMBS_DOWN_BTN2}    The background looks natural and complements the product.
+    Feedback for Image    ${GENERATED_IMAGE3}    ${THUMBS_UP_BTN3}    ${THUMBS_DOWN_BTN3}    Excellent lighting and realistic product placement.
+    Button Click   ${DOWNLOAD}    Download
+    
+12.Verify Close And Download All Button  
     [Documentation]    Validate download all images functionality and close action
     Download All Images And Close  ${DOWNLOAD_ALL}   ${CLOSE_BUTTON}
 
-13.Verify Remove Button
-    [Documentation]    Select image and remove selected image
-    Select Image      ${IMAGE_BLUE_TICK}  ${REMOVE_BUTTON}
-    Remove Selected Image    1   ${REMOVE_BUTTON}  ${UPLOADED_IMAGE_PREVIEW}
-
-14.Validate Excel upload, Download Button 
-    [Documentation]    Validate Excel upload, image generation, and wallet balance deduction on download
-    Upload Valid Excel Sheet  ${VALID_EXCEL_SHEET_INFOGRAPHIC}  ${EXCEL_SUCCESS_POPUP} 
-    Click Button  ${SELECT_ALL_BUTTON}  Select all clicked successfully
-    Verify Generate Count  ${UPLOADED_IMAGE_WITH_TICK}   ${GENERATE_BTN}  
-    Wait Until Processing Disappears    ${PROCESSING_TEXT}
-    Element Should Be Visible    ${GENERATED_IMAGE}
-    Element Should Be Visible  ${GENERATED_STATUS}
-    Log To Console    Image generated successfully
-    Validate Copy And Download Icon Price    ${COPY_ICON}   ₹20  ${DOWNLOAD_ICON}    ₹20
-    Validate Download Button   ${DOWNLOAD_BUTTON}   20
-    Log To Console    download functionality and wallet deduction verified successfully
-
-15.Verify History
+13.Verify History
     [Documentation]    Open history, apply filter, and validate page state
     Open History  ${HISTORY_BTN}   ${FILTER_BTN}   History Page visible succefully
-    Click Button  ${FILTER_BTN}  filter 
+    Button Click  ${FILTER_BTN}  filter 
     Select Date Range And Validate     Today
     Validate History Page State  ${NO_HISTORY}   ${WITH_HISTORY}
    
 16.Verify Navigate back to Infographic Creator Tab and AI Agents tabs
     [Documentation]    Navigate back to Infographic Creator and AI Agents tabs
-    Click Button  ${INFOGRAPHIC_CREATOR_TAB}  Navigate back to Infographic Creator tab
-    Wait Until Page Contains  Infographic Creator  5s  
-    Click Button   ${AI_AGENTS_TAB}   Navigate back to AI Agents tab
+    Button Click    ${INFOGRAPHIC_IMAGE_CREATOR_TAB}  Navigate back to Infographic Creator tab
+    Wait Until Page Contains  Infographic Image Creator  5s  
+    Button Click   ${AI_AGENTS_TAB}   Navigate back to AI Agents tab
     Wait Until Element Is Visible       ${ALL_FILTER}    5s
 17.Verify Search 
     [Documentation]    Verify search for an AI agent 
-    Search AI Agent    A+ Content Creator
+    Search AI Agent    AI Listing Creator
