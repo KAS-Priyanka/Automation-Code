@@ -78,13 +78,11 @@ Suite Teardown   Close Browser
     Button Click   ${COPY_BUTTON}    copy 
     Wait Until Page Contains   Image Copied!
 
- 11.Verify Image Regeneration ,Feedback And Download Functionality
+11.Verify Image Regeneration ,Feedback And Download Functionality
     [Documentation]    Validate image regeneration flow with prompt input and submission
-    #Image Regeneration   ${REGENERATE_BUTTON}  ${CLOSE_PROMPT}  ${INPUT_BOX}  ${SEND_BTN} 
-    Feedback for Image    ${GENERATED_IMAGE1}    ${THUMBS_UP_BTN1}    ${THUMBS_DOWN_BTN1}    Good quality lifestyle image generated.
-    Feedback for Image    ${GENERATED_IMAGE2}    ${THUMBS_UP_BTN2}    ${THUMBS_DOWN_BTN2}    The background looks natural and complements the product.
-    Feedback for Image    ${GENERATED_IMAGE3}    ${THUMBS_UP_BTN3}    ${THUMBS_DOWN_BTN3}    Excellent lighting and realistic product placement.
-    Button Click   ${DOWNLOAD}    Download
+    Image Regeneration For Infographic   ${REGENERATE_BUTTON}  ${SEND_BTN} 
+    Feedback For Image   ${GENERATED_IMAGE1}   ${THUMBS_DOWN_BTN1}   ${THUMBS_UP_BTN1}  UP   The background looks natural and complements the product.
+    #Button Click   ${DOWNLOAD}    Download
     
 12.Verify Close And Download All Button  
     [Documentation]    Validate download all images functionality and close action

@@ -150,7 +150,8 @@ ${THUMBS_UP_BTN3}    xpath=(//button[@aria-label='Like'])[3]
 ${THUMBS_DOWN_BTN3}    xpath=(//button[@aria-label='Dislike'])[3]
 ${FEEDBACK_POPUP}    xpath=//div[contains(@class,'absolute') and .//h3[text()='Tell us why?']]
 ${FEEDBACK_CLOSE_BTN}  xpath=//button[@aria-label='Close feedback']
-${FEEDBACK_TEXTAREA}    xpath=//textarea[@placeholder='Add comment']
+${THUMBS_UP_FEEDBACK_TEXTAREA}    xpath=//textarea[@placeholder='Add comment']
+${THUMBS_DOWN_FEEDBACK_TEXTAREA}    xpath=//textarea[@placeholder='Add comment or describe the issue']
 ${FEEDBACK_SUBMIT_BTN}   xpath=//button[text()='Submit']
 ${VIEW_IMAGES}    xpath=//img[@alt='lifestyle']
 ${CLOSE_BUTTON}    xpath=//button[normalize-space()='Close']
@@ -169,7 +170,7 @@ ${FILTER_BTN}    xpath=//button[.//span[normalize-space()='Filter']]
 ${APPLY_BTN}    xpath=//button[normalize-space()='Apply']
 ${WITH_HISTORY}  xpath=//img[contains(@class,'tour-spotlight-image')]
 ${NO_HISTORY}    xpath=//p[text()='History not available']
-${HISTORY_PREVIEW}   xpath=//div[contains(@class,'group')]//img
+${HISTORY_PREVIEW}   xpath=(//img[contains(@alt,'Generated')])
 ${HISTORY_PREVIEW_CLOSE_BTN}     xpath=//div[contains(@class,'flex justify-end')]//button
 #---infographic Creator----
 

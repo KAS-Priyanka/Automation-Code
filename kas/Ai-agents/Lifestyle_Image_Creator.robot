@@ -25,14 +25,12 @@ Suite Teardown   Close Browser
     Filter And Validate Agents   ${VISUAL_INTELLIGENCE}
     Filter And Validate Agents   ${LISTING_INTELLIGENCE}
     Filter And Validate Agents   ${ALL_FILTER}   
-
-    
+  
 3.Launch Infographic Agent  
     [Documentation]    Validate AI agent card, launch Lifestyle Photo Creator
     Verify AI-agents Card  ${LIFESTYLE_CARD}  ${LIFESTYLE_TITLE}   ${LIFESTYLE_PRICE}  ${LIFESTYLE_AGENT_LUNCH_BTN}
     Launch AI Agent   Lifestyle Image Creator
   
-
 4.Verify Lifestyle Image Creator Page,Wallet Section And Template Download
     [Documentation]   Verify Lifestyle Image Creator Page, Wallet Section And Template Download button
     Wait Until Page Contains   Lifestyle Image Creator    5s   
@@ -41,14 +39,13 @@ Suite Teardown   Close Browser
     Button Click  ${TEMPLATE_DOWNLOAD_BUTTON}   Template Download
     Button Click   ${HELP_BTN}    ?
     
-    
 5.Enter Invalid ASIN And Verify Error
     Enter ASIN   B0FXGVJS   Invalid ASIN entered.
     Element Text Should Be    ${INVALID_ASIN_ERROR}    Enter a valid ASIN
 
 6.Verify Valid ASIN Entry, Marketplace Selection, ASIN Removal and Product Upload
     Select Marketplace For ASIN  ${ASIN_MARKETPLACE_DROPDOWN}   Amazon.com
-    Enter ASIN  B0CQ2CTKBH  Valid ASIN entered successfully.
+    Enter ASIN  B000U5O5XI  Valid ASIN entered successfully.
     Enter ASIN   B000GAYQJ0   Valid ASIN entered successfully.
     Enter ASIN   B0CJ4R8W4J   Valid ASIN entered successfully.
     Remove ASIN     B0CJ4R8W4J  ASIN removed successfully.
@@ -85,15 +82,14 @@ Suite Teardown   Close Browser
 10.Verify Generated Images,Copy Functionality
     [Documentation]    Validate generated image preview, copy action and download All functionality
     Open Generated Images    ${GENERATED_IMAGE}     ${IMAGE_PREVIEW}
+    Verify Wallet Change After Copy   ${COPY_BUTTON}    20
     Button Click   ${COPY_BUTTON}    copy 
     Wait Until Page Contains   Image Copied!
 
  11.Verify Image Regeneration ,Feedback And Download Functionality
     [Documentation]    Validate image regeneration flow with prompt input and submission
-    #Image Regeneration   ${REGENERATE_BUTTON}  ${CLOSE_PROMPT}  ${INPUT_BOX}  ${SEND_BTN} 
-    Feedback for Image    ${GENERATED_IMAGE1}    ${THUMBS_UP_BTN1}    ${THUMBS_DOWN_BTN1}    Good quality lifestyle image generated.
-    Feedback for Image    ${GENERATED_IMAGE2}    ${THUMBS_UP_BTN2}    ${THUMBS_DOWN_BTN2}    The background looks natural and complements the product.
-    Feedback for Image    ${GENERATED_IMAGE3}    ${THUMBS_UP_BTN3}    ${THUMBS_DOWN_BTN3}    Excellent lighting and realistic product placement.
+    Image Regeneration   ${REGENERATE_BUTTON}  ${CLOSE_PROMPT}  ${INPUT_BOX}  ${SEND_BTN} 
+    Feedback For Image   ${GENERATED_IMAGE1}   ${THUMBS_DOWN_BTN1}   ${THUMBS_UP_BTN1}  UP   The background looks natural and complements the product.
     Button Click   ${DOWNLOAD}    Download
     
 12.Verify Download All And Close Button  

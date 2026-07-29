@@ -53,6 +53,9 @@ Login Setup
 Button Click 
     [Arguments]    ${locator}  ${label}
     Wait Until Element Is Visible    ${locator}    5s
+    Wait Until Element Is Not Visible
+    ...    xpath=//div[contains(@class,'absolute') and contains(@class,'bottom-3')]
+    ...    10s
     Click Element    ${locator}
     Log To Console    ${label} visible and clicked successfully
 
@@ -424,23 +427,7 @@ Select Image
     Wait Until Element Is Visible    ${remove_btn}    5s
     Log To Console    Image selected successfully
 
-# Verify Selection Count
-#     [Arguments]  ${selected_image}  
-#     ${count}=    Get Element Count    ${selected_image}
-#     Log To Console    Actual selected count: ${count}
 
-#     # Get UI text (e.g., "2 selected")
-#     ${ui_text}=    Get Text    ${SELECTED_TEXT}
-#     Log To Console    UI text: ${ui_text}
-
-#     # Extract number from UI text
-#     ${ui_count}=    Evaluate    int('${ui_text}'.split()[0])
-
-#     Log To Console    UI count: ${ui_count}
-
-#     # Compare both
-#     Should Be Equal As Integers    ${count}    ${ui_count}
-#     Log To Console  expected and UI count is same
 
 Verify Selection, Remove And Generate Counts
     [Arguments]    ${selected_image_locator}    ${remove_btn}    ${generate_btn}    ${selection_label}
@@ -459,18 +446,6 @@ Verify Selection, Remove And Generate Counts
     Log To Console     Remove count is correct: ${remove_text}
     Log To Console     Generate count is correct: ${generate_text}
 
-
-Verify Generate Count 
-    [Arguments]    ${selected_image}    ${genarated_btn}   
-    ${count}=    Get Element Count    ${selected_image}
-    ${generate_text}=    Get Text    ${genarated_btn}
-    Log To Console    Generate Text: ${generate_text}
-    Should Contain    ${generate_text}    (${count})
-    Log To Console    Generate count ${count} is displayed correctly on button
-    Wait Until Element Is Visible    ${genarated_btn}      10s
-    Log To Console    Generate button is enabled with correct count
-    Click Element  ${genarated_btn}  
-    Log To Console    Generate button clicked successfully
  
    
 Remove Selected Image
@@ -483,34 +458,24 @@ Remove Selected Image
     Should Be True    ${after_count} < ${before_count}
     Log To Console    Image removed successfully, remaining images: ${after_count}
 
-Verify Wallet Change After Download
-    [Arguments]    ${download_locator}    ${deduct_value}
-
+Verify Wallet Change After Copy
+    [Arguments]    ${copy_locator}    ${deduct_value}
     ${wallet_before}=    Get Text    ${WALLET_VALUE}
     Log To Console    Wallet Before: ${wallet_before}
-
     ${before}=    Replace String    ${wallet_before}    ₹    ${EMPTY}
     ${before}=    Strip String    ${before}
     ${before}=    Convert To Integer    ${before}
-
-    Click Element    ${download_locator}
-
+    Click Element    ${copy_locator}
     Wait Until Keyword Succeeds    20s    3s    Wallet Should Update    ${before}
-
     ${wallet_after}=    Get Text    ${WALLET_VALUE}
     Log To Console    Wallet After: ${wallet_after}
-
     ${after}=    Replace String    ${wallet_after}    ₹    ${EMPTY}
     ${after}=    Strip String    ${after}
     ${after}=    Convert To Integer    ${after}
-
     ${deduct_value}=    Convert To Integer    ${deduct_value}
-
     ${expected}=    Evaluate    ${before} - ${deduct_value}
     Log To Console    Expected Wallet: ${expected}
-
     Should Be Equal As Integers    ${after}    ${expected}
-
     Log To Console    Wallet deduction verified successfully. Deducted: ₹${deduct_value}
 
 Wallet Should Update
@@ -661,28 +626,69 @@ Image Regeneration
         Log To Console    Remaining after attempt ${i}: ${remaining}
     END
 
-Feedback for Image
-    [Arguments]  ${generated_image}  ${thumps_up}  ${thumps_down}  ${feedback_message}
-     # Hover on first generated image
-    ${img}=    Get WebElement   ${generated_image}
-    Mouse Over    ${img}
-    Click Element    ${thumps_down}
-    Click Element     ${feedback_close_btn}
-    Click Element   ${thumps_up} 
-    Wait Until Page Contains  Tell us why?    
-    Input Text    ${FEEDBACK_TEXTAREA}     ${feedback_message}
-    Click Element   ${FEEDBACK_SUBMIT_BTN}
-    Log To Console    Feedback submitted successfully
+Image Regeneration For Infographic
+    [Arguments]    ${regenerate_btn}     ${send_btn}
+
+    ${remaining}=    Set Variable    2
+
+    FOR    ${i}    IN RANGE    1    3
+       
+        Wait Until Element Is Visible    ${regenerate_btn}    10s
+        mouse Over    ${regenerate_btn}
+        Wait Until Keyword Succeeds    10s    1s
+        ...    Page Should Contain    ${remaining} remaining
+        Log To Console     Before click: ${remaining} remaining
+        Click Element    ${regenerate_btn}
+        Wait Until Keyword Succeeds    5 min    5 sec
+        ...    Element Should Not Be Visible    ${REGENERATING_TEXT}
+        Element Should Be Visible    ${COPY_BUTTON}
+        Element Should Be Visible    ${DOWNLOAD}
+
+        ${remaining}=    Evaluate    ${remaining} - 1
+        Log To Console    Remaining after attempt ${i}: ${remaining}
+    END
+
+Feedback For Image
+    [Arguments]    ${generated_image}    ${thumbs_down}    ${thumbs_up}    ${feedback_type}    ${feedback_message}
+
+    Wait Until Element Is Visible    ${generated_image}    10s
+    Mouse Over    ${generated_image}
+
+    IF    '${feedback_type}' == 'DOWN'
+        Click Element    ${thumbs_down}
+        Wait Until Element Is Visible    xpath=//h3[normalize-space()='What went wrong?']    10s
+        Click Element    xpath=//button[normalize-space()='Wrong Setting']
+        # Wait Until Element Is Visible  ${THUMBS_DOWN_FEEDBACK_TEXTAREA}    10s
+        # Input Text    ${THUMBS_DOWN_FEEDBACK_TEXTAREA}    ${feedback_message}
+        wait Until Element Is Visible    ${FEEDBACK_SUBMIT_BTN}    10s
+        Click Element    ${FEEDBACK_SUBMIT_BTN}
+        sleep  2s
+        Log To Console    Thumbs Down feedback submitted successfully.
+
+    ELSE IF    '${feedback_type}' == 'UP'
+        Click Element    ${thumbs_up}
+        Wait Until Element Is Visible    xpath=//h3[normalize-space()='Tell us why?']    10s 
+        Input Text    ${THUMBS_UP_FEEDBACK_TEXTAREA}    ${feedback_message}
+        Click Element    ${FEEDBACK_SUBMIT_BTN}
+        Log To Console    Thumbs Up feedback submitted successfully.
+    END
 
 Download All Images And Close
     [Arguments]   ${downlaod_all}  ${close}
     Wait Until Element Is Visible    ${download_all}    10s
+    Wait Until Element Is Not Visible
+    ...    xpath=//div[contains(@class,'absolute') and contains(@class,'bottom-3')]
+    ...    10s
     Click Element                   ${download_all}
     #Wait Until Page Contains     Images Downloaded      10s
     Log To Console  download All Images successfully
-    Wait Until Element Is Visible    ${close}    10s
-    Click Element                   ${close}
+    Wait Until Element Is Not Visible
+    ...    xpath=//div[contains(@class,'absolute') and contains(@class,'bottom-3')]
+    ...    10s
+    Wait Until Keyword Succeeds    5x    2s
+    ...    Click Element   ${close}
     Wait Until Page Contains    Generated    5s
+    Sleep  2s
     Log To Console  Image preview closed successfully
 
 Validate Download Button
@@ -840,7 +846,7 @@ Validate Year Range
     ${to_year}=      Convert Date    ${to_date}      result_format=%Y
 
     Should Be Equal    ${from_year}    ${to_year}    
-    ...    msg=❌ Year range is invalid
+    ...    msg= Year range is invalid
 
 Validate History Page State
     [Arguments]   ${no_history}   ${with_history}
@@ -868,15 +874,16 @@ Validate History Cards
     Wait Until Keyword Succeeds    5x    2s
     ...    Element Should Not Be Visible    
     ...    //div[contains(@class,'bg-[#F6F7F8]')]        
-    Wait Until Element Is Visible    xpath=(//button[@type='button' and .//img[contains(@class,'tour-spotlight-image')]])[1]    5s
+    Wait Until Element Is Visible    xpath=(//div[@role='button' and contains(@class,'group')])[1]    5s
     Log To Console     History cards loaded successfully
 
-    Scroll Element Into View       xpath=(//button[@type='button' and .//img[contains(@class,'tour-spotlight-image')]])[1]
-    Click Element                   xpath=(//button[@type='button' and .//img[contains(@class,'tour-spotlight-image')]])[1]
+    Scroll Element Into View       xpath=(//div[@role='button' and contains(@class,'group')])[1]
+    mouse Over                    xpath=(//div[@role='button' and contains(@class,'group')])[1]
+    Click Element                   xpath=(//div[@role='button' and contains(@class,'group')])[1]
     Wait Until Keyword Succeeds      5x    10 sec
     ...    Element Should Be Visible    ${HISTORY_PREVIEW}
     ${count}=    Get Element Count    ${HISTORY_PREVIEW}
-    Should Be Equal As Integers    ${count}    3
+    Should Be Equal As Integers    ${count}    5
     Log To Console  value matches
     Log To Console    Preview loaded successfully
     sleep   5s

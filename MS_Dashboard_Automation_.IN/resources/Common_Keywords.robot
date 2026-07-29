@@ -320,39 +320,39 @@ Asc And Desc Toggle
     Log To Console    ${mgs}Category Toggle Clicked
 
 
-Validate Return Cities Belong To Selected State
-    [Arguments]    ${STATE}
+# Validate Return Cities Belong To Selected State
+#     [Arguments]    ${STATE}
 
-    ${STATE}=    Strip String    ${STATE}
+#     ${STATE}=    Strip String    ${STATE}
 
-    Wait Until Element Is Visible    ${TOP_5_CITY_TABLE}//tr[1]    10s
+#     Wait Until Element Is Visible    ${TOP_5_CITY_TABLE}//tr[1]    10s
 
-    @{validCities}=    Get From Dictionary    ${STATE_CITY_MAP}    ${STATE}
+#     @{validCities}=    Get From Dictionary    ${STATE_CITY_MAP}    ${STATE}
 
-    # Normalize expected city list
-    @{expectedLower}=    Create List
-    FOR    ${city}    IN    @{validCities}
-        ${city}=    Convert To Lower Case    ${city}
-        Append To List    ${expectedLower}    ${city}
-    END
+#     # Normalize expected city list
+#     @{expectedLower}=    Create List
+#     FOR    ${city}    IN    @{validCities}
+#         ${city}=    Convert To Lower Case    ${city}
+#         Append To List    ${expectedLower}    ${city}
+#     END
 
-    ${rows}=    Get WebElements    ${TOP_5_CITY_TABLE}//tr
+#     ${rows}=    Get WebElements    ${TOP_5_CITY_TABLE}//tr
 
-    FOR    ${row}    IN    @{rows}
+#     FOR    ${row}    IN    @{rows}
 
-        ${cell}=    Call Method    ${row}    find_element    xpath    .//td[1]
-        ${city}=    Get Text    ${cell}
+#         ${cell}=    Call Method    ${row}    find_element    xpath    .//td[1]
+#         ${city}=    Get Text    ${cell}
 
-        ${city}=    Strip String    ${city}
-        ${city}=    Convert To Lower Case    ${city}
+#         ${city}=    Strip String    ${city}
+#         ${city}=    Convert To Lower Case    ${city}
 
-        Log To Console    Checking city = ${city}
+#         Log To Console    Checking city = ${city}
 
-        List Should Contain Value    ${expectedLower}    ${city}
+#         List Should Contain Value    ${expectedLower}    ${city}
 
-    END
+#     END
 
-    Log To Console    All cities belong to selected state
+#     Log To Console    All cities belong to selected state
 
 
 Validate Currency By Country
@@ -696,58 +696,58 @@ Validate Commerce IQ Dashboard
     Wait Until Element Is Visible    ${NEW_SESSION_BTN}    10s
     Log To Console    Dashboard loaded successfully
 
-#--Pagination----
-Click Page Number
-    [Arguments]    ${page_no}    ${table_locator}
+# #--Pagination----
+# Click Page Number
+#     [Arguments]    ${page_no}    ${table_locator}
 
-    ${page_button}=    Set Variable
-    ...    ${SKU_CARD}//a[@aria-label='Page ${page_no}']
-
-
-    Wait Until Element Is Visible    ${page_button}    10s
-    Click Element    ${page_button}
-
-    Wait Until Element Is Visible    ${table_locator}    10s
-
-    Log To Console    Navigated to page ${page_no}
-
-Click Next Page
-    [Arguments]    ${table_locator}
-
-    ${next_btn}=    Set Variable
-    ...    ${SKU_CARD}//a[@aria-label='Next page']
-
-    Wait Until Element Is Visible    ${next_btn}    10s
-    Click Element    ${next_btn}
-
-    Wait Until Element Is Visible    ${table_locator}    10s
-
-    Log To Console    Moved to next page
-
-Verify Active Page
-    [Arguments]    ${expected_page}
-
-    ${active}=    Get Text    ${SKU_CARD}//a[@aria-current='page']  
-
-    Should Be Equal As Strings    ${active}    ${expected_page}
-
-    Log To Console    Active page verified : ${active}
+#     ${page_button}=    Set Variable
+#     ...    ${SKU_CARD}//a[@aria-label='Page ${page_no}']
 
 
+#     Wait Until Element Is Visible    ${page_button}    10s
+#     Click Element    ${page_button}
 
-Verify Session Page And Open Dashboard
-    [Documentation]    Verifies Session logo, AI agent and dashboard icon visibility
+#     Wait Until Element Is Visible    ${table_locator}    10s
 
-    Scroll Element Into View  ${SESSION_LOGO} 
-    Wait Until Element Is Visible  ${SESSION_LOGO}   5s
-    Wait Until Page Contains  Commerce IQ     5s
-    Log To Console  Session Logo is visible
+#     Log To Console    Navigated to page ${page_no}
 
-    Scroll Element Into View  ${AI_AGENT}
-    Wait Until Element Is Visible   ${AI_AGENT}   5s
-    Log To Console  AI Agent is visible
+# Click Next Page
+#     [Arguments]    ${table_locator}
 
-    Scroll Element Into View   ${DASHBOARD_MENU} 
-    Wait Until Element Is Visible  ${DASHBOARD_MENU}   5s
-    Click Element    ${DASHBOARD_MENU} 
-    Log To Console   Dashboard Icon is visible
+#     ${next_btn}=    Set Variable
+#     ...    ${SKU_CARD}//a[@aria-label='Next page']
+
+#     Wait Until Element Is Visible    ${next_btn}    10s
+#     Click Element    ${next_btn}
+
+#     Wait Until Element Is Visible    ${table_locator}    10s
+
+#     Log To Console    Moved to next page
+
+# Verify Active Page
+#     [Arguments]    ${expected_page}
+
+#     ${active}=    Get Text    ${SKU_CARD}//a[@aria-current='page']  
+
+#     Should Be Equal As Strings    ${active}    ${expected_page}
+
+#     Log To Console    Active page verified : ${active}
+
+
+
+# Verify Session Page And Open Dashboard
+#     [Documentation]    Verifies Session logo, AI agent and dashboard icon visibility
+
+#     Scroll Element Into View  ${SESSION_LOGO} 
+#     Wait Until Element Is Visible  ${SESSION_LOGO}   5s
+#     Wait Until Page Contains  Commerce IQ     5s
+#     Log To Console  Session Logo is visible
+
+#     Scroll Element Into View  ${AI_AGENT}
+#     Wait Until Element Is Visible   ${AI_AGENT}   5s
+#     Log To Console  AI Agent is visible
+
+#     Scroll Element Into View   ${DASHBOARD_MENU} 
+#     Wait Until Element Is Visible  ${DASHBOARD_MENU}   5s
+#     Click Element    ${DASHBOARD_MENU} 
+#     Log To Console   Dashboard Icon is visible
