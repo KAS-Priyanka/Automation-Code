@@ -82,8 +82,7 @@ Suite Teardown   Close Browser
 10.Verify Generated Images,Copy Functionality
     [Documentation]    Validate generated image preview, copy action and download All functionality
     Open Generated Images    ${GENERATED_IMAGE}     ${IMAGE_PREVIEW}
-    Verify Wallet Change After Copy   ${COPY_BUTTON}    20
-    Button Click   ${COPY_BUTTON}    copy 
+    Verify Wallet Change After Copy   ${COPY_BUTTON}    15 
     Wait Until Page Contains   Image Copied!
 
  11.Verify Image Regeneration ,Feedback And Download Functionality

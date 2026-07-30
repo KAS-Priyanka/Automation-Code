@@ -48,7 +48,7 @@ ${LISTING_INTELLIGENCE}      xpath=//button[normalize-space()='Listing Intellige
 #---lifestyle photo creator---
 ${LIFESTYLE_CARD}     xpath=//h3[normalize-space()='Lifestyle Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]
 ${LIFESTYLE_TITLE}    xpath=//h3[normalize-space()='Lifestyle Image Creator']
-${LIFESTYLE_PRICE}    xpath=//h3[normalize-space()='Lifestyle Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹20']
+${LIFESTYLE_PRICE}    xpath=//h3[normalize-space()='Lifestyle Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹15']
 ${LIFESTYLE_AGENT_LUNCH_BTN}  xpath=//h3[normalize-space()='Lifestyle Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//button[normalize-space()='Launch']
 ${GENERATE_CONTENT_BTN}   xpath=//*[name()='path' and contains(@d,'M256 48C141.31 48')]/ancestor::*[name()='svg']
 ${HELP_BTN}     xpath=//button[contains(@class,'h-8') and contains(@class,'w-8')]
@@ -176,10 +176,10 @@ ${HISTORY_PREVIEW_CLOSE_BTN}     xpath=//div[contains(@class,'flex justify-end')
 
 ${INFOGRAPHIC_IMAGE_CREATOR_CARD}     xpath=//h3[normalize-space()='Infographic Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]
 ${INFOGRAPHIC_TITLE}    xpath=//h3[normalize-space()='Infographic Image Creator']
-${INFOGRAPHIC_PRICE}    xpath=//h3[normalize-space()='Infographic Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹20']
+${INFOGRAPHIC_PRICE}    xpath=//h3[normalize-space()='Infographic Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹15']
 ${INFOGRAPHIC_AGENT_LAUNCH_BTN}  xpath=//h3[normalize-space()='Infographic Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//button[normalize-space()='Launch']
-
 ${INFOGRAPHIC__IMAGE_CREATOR_TAB}    xpath=//span[normalize-space()='Infographic Image Creator']
+${NO_IMAGES}    xpath=(//div[normalize-space()='No image'])[1]
 
 #----history-----
 ${CREATED_DATE_LIST}  xpath=//p[contains(.,'Created At')]//span
@@ -192,7 +192,7 @@ ${GENERATE_CONTENT}          xpath=//p[text()='Generate New Content']
 ${FABRIC_DETAIL_CREATOR_CARD}    xpath=//h3[normalize-space()='Fabric Detail Creator']/ancestor::div[contains(@class,'cursor-pointer')]
 
 ${FABRIC_DETAIL_CREATOR_TITLE}    xpath=//h3[normalize-space()='Fabric Detail Creator']
-${FABRIC_DETAIL_CREATOR_PRICE}    xpath=//h3[normalize-space()='Fabric Detail Creator']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹20']
+${FABRIC_DETAIL_CREATOR_PRICE}    xpath=//h3[normalize-space()='Fabric Detail Creator']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹15']
 ${FABRIC_DETAIL_CREATOR_AGENT_LAUNCH_BTN}  xpath=//h3[normalize-space()='Fabric Detail Creator']/ancestor::div[contains(@class,'cursor-pointer')]//button[normalize-space()='Launch']
 ${FABRIC_DETAIL_CREATOR_TAB}    xpath=//span[normalize-space()='Fabric Detail Creator']
 ${FABRIC_DETAIL_CREATOR_VALID_IMAGE}      E:\\selenium project\\kas\\MS_Dashboard_Automation\\Ai-agents\\AI-agents images\\green_sadi.jpg

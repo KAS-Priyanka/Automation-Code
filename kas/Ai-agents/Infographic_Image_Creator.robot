@@ -75,14 +75,14 @@ Suite Teardown   Close Browser
 10.Verify Generated Images,Copy Functionality
     [Documentation]    Validate generated image preview, copy action and download All functionality
     Open Generated Images    ${GENERATED_IMAGE}     ${IMAGE_PREVIEW}
-    Button Click   ${COPY_BUTTON}    copy 
+    Verify Wallet Change After Copy   ${COPY_BUTTON}    15 
     Wait Until Page Contains   Image Copied!
 
 11.Verify Image Regeneration ,Feedback And Download Functionality
     [Documentation]    Validate image regeneration flow with prompt input and submission
     Image Regeneration For Infographic   ${REGENERATE_BUTTON}  ${SEND_BTN} 
     Feedback For Image   ${GENERATED_IMAGE1}   ${THUMBS_DOWN_BTN1}   ${THUMBS_UP_BTN1}  UP   The background looks natural and complements the product.
-    #Button Click   ${DOWNLOAD}    Download
+
     
 12.Verify Close And Download All Button  
     [Documentation]    Validate download all images functionality and close action
@@ -93,14 +93,15 @@ Suite Teardown   Close Browser
     Open History  ${HISTORY_BTN}   ${FILTER_BTN}   History Page visible succefully
     Button Click  ${FILTER_BTN}  filter 
     Select Date Range And Validate     Today
-    Validate History Page State  ${NO_HISTORY}   ${WITH_HISTORY}
+    Validate History Page State  ${NO_IMAGES}   ${WITH_HISTORY}
+
    
-16.Verify Navigate back to Infographic Creator Tab and AI Agents tabs
+14.Verify Navigate back to Infographic Creator Tab and AI Agents tabs
     [Documentation]    Navigate back to Infographic Creator and AI Agents tabs
     Button Click    ${INFOGRAPHIC_IMAGE_CREATOR_TAB}  Navigate back to Infographic Creator tab
     Wait Until Page Contains  Infographic Image Creator  5s  
     Button Click   ${AI_AGENTS_TAB}   Navigate back to AI Agents tab
     Wait Until Element Is Visible       ${ALL_FILTER}    5s
-17.Verify Search 
+15.Verify Search 
     [Documentation]    Verify search for an AI agent 
     Search AI Agent    AI Listing Creator
