@@ -183,11 +183,18 @@ ${NO_IMAGES}    xpath=(//div[normalize-space()='No image'])[1]
 
 #----history-----
 ${CREATED_DATE_LIST}  xpath=//p[contains(.,'Created At')]//span
-
 ${FIRST_PREVIEW_BTN}    xpath=(//button[normalize-space()='Preview'])[1]
-
 ${GENERATE_CONTENT}          xpath=//p[text()='Generate New Content']
 
+#Banner Image Creator
+${BANNER_IMAGE_CREATOR_CARD}     xpath=//h3[normalize-space()='Banner Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]
+${BANNER_IMAGE_CREATOR_TITLE}    xpath=//h3[normalize-space()='Banner Image Creator']
+${BANNER_IMAGE_CREATOR_PRICE}    xpath=//h3[normalize-space()='Banner Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹15']
+${BANNER_IMAGE_CREATOR_AGENT_LAUNCH_BTN}  xpath=//h3[normalize-space()='Banner Image Creator']/ancestor::div[contains(@class,'cursor-pointer')]//button[normalize-space()='Launch']
+${BANNER_IMAGE_CREATOR_TAB}    xpath=//span[normalize-space()='Banner Image Creator']    
+${LOGO_UPLOAD_BUTTON}    xpath=//label[normalize-space()='Logo (Optional):']/following-sibling::button
+${LOGO_IMAGE}    E:\\selenium project\\kas\\Ai-agents\\AI-agents images\\logo.jpg
+${BANNER_SIZE_DROPDOWN}  xpath=//label[normalize-space()='Banner Size:']/following::button[1]
 #Fabric Detail Creator
 ${FABRIC_DETAIL_CREATOR_CARD}    xpath=//h3[normalize-space()='Fabric Detail Creator']/ancestor::div[contains(@class,'cursor-pointer')]
 
@@ -206,7 +213,7 @@ ${BACKGROUND_REMOVER_TITLE}    xpath=//h3[normalize-space()='Background Remover'
 ${BACKGROUND_REMOVER_PRICE}    xpath=//h3[normalize-space()='Background Remover']/ancestor::div[contains(@class,'cursor-pointer')]//span[normalize-space()='₹10']
 ${BACKGROUND_REMOVER_AGENT_LAUNCH_BTN}  xpath=//h3[normalize-space()='Background Remover']/ancestor::div[contains(@class,'cursor-pointer')]//button[normalize-space()='Launch']
 ${BACKGROUND_REMOVER_TAB}    xpath=//span[normalize-space()='Background Remover']
-${BACKGROUND_REMOVER_VALID_IMAGE}      E:\\selenium project\\kas\\MS_Dashboard_Automation\\Ai-agents\\AI-agents images\\food_jar.jpg
+${BACKGROUND_REMOVER_VALID_IMAGE}      E:\\selenium project\\kas\\Ai-agents\\AI-agents images\\food_jar.jpg
 ${OUTPUT_IMAGE_SIZE_DROPDOWN2}   xpath=//label[normalize-space()='Output image sizess:']/following::button[1]
 
 

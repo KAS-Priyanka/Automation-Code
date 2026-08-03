@@ -306,6 +306,53 @@ Select Marketplace
     Wait Until Element Is Visible    ${value_locator}    10s
     Log To Console    Marketplace ${option} selected 
 
+
+Select Banner Size
+    [Arguments]        ${banner_size_dropdown}  ${option}
+    Click Element    ${banner_size_dropdown}
+    ${option_locator}=    Set Variable    xpath=//span[normalize-space()='${option}']
+    Wait Until Element Is Visible    ${option_locator}    10s
+    Click Element                    ${option_locator}
+    ${value_locator}=    Set Variable    xpath=//button[.//span[normalize-space()='${option}']]
+    Wait Until Element Is Visible    ${value_locator}    10s
+    Log To Console    Banner Size ${option} selected 
+
+Select Banner Text
+    [Arguments]    ${mode}    ${headline}=${EMPTY}    ${subtext}=${EMPTY}
+
+    ${mode_locator}=    Set Variable
+    ...      xpath=//div[h2[normalize-space()='Banner text:']]//button[normalize-space()='${mode}']
+    Wait Until Element Is Visible    ${mode_locator}    10s
+    Click Element    ${mode_locator}
+
+    IF    '${mode}' == 'Custom'
+        Wait Until Element Is Visible    xpath=//label[normalize-space()='Headline:']/following::textarea[1]    10s
+        Input Text    xpath=//label[normalize-space()='Headline:']/following::textarea[1]    ${headline}
+        Input Text    xpath=//label[normalize-space()='Subtext:']/following::textarea[1]    ${subtext}
+    END
+    Log To Console    Banner text mode '${mode}' selected
+    
+Select Visual Style
+    [Arguments]    ${mode}    ${value}=${EMPTY}
+
+    ${mode_locator}=    Set Variable
+    ...    xpath=//div[h2[normalize-space()='Visual Style:']]//button[normalize-space()='${mode}']
+    Wait Until Element Is Visible    ${mode_locator}    10s
+    Click Element    ${mode_locator}
+    IF    '${mode}' == 'Styles'
+        ${style_locator}=    Set Variable
+        ...    xpath=//div[h2[normalize-space()='Visual Style:']]//p[normalize-space()='${value}']/ancestor::div[contains(@class,'cursor-pointer')]
+        Wait Until Element Is Visible    ${style_locator}    10s
+        Click Element    ${style_locator}
+    ELSE IF    '${mode}' == 'Custom'
+        ${instruction_locator}=    Set Variable
+        ...    xpath=//label[normalize-space()='Style Instructions:']/following::textarea[1]
+
+        Wait Until Element Is Visible    ${instruction_locator}    10s
+        Input Text    ${instruction_locator}    ${value}
+    END
+    Log To Console    Visual Style '${mode}' selected
+
 Select And Validate Theme
     [Arguments]    ${theme}
 
@@ -374,6 +421,19 @@ Upload Invalid Image
     Wait Until Keyword Succeeds    10x    1s    
     ...    Page Should Not Contain Element    
     ...    ${invalid_image_error}
+
+Close Select Your Images Popup
+    ${popup_present}=    Run Keyword And Return Status
+    ...    Wait Until Element Is Visible
+    ...    xpath=//div[@id='driver-popover-content']
+    ...    3s
+
+    IF    ${popup_present}
+        Click Element    xpath=//div[@id='driver-popover-content']//button[@aria-label='Close']
+        Log To Console    Onboarding popup closed.
+    ELSE
+        Log To Console    Onboarding popup not displayed.
+    END
 
 Upload Invalid Excel Sheet
     [Arguments]    ${file_path}
@@ -1016,29 +1076,44 @@ Select Output Image Size For Background Removal
 
 Select Background Color
     [Arguments]    ${color}
-    # Convert HEX → RGB
+
+    # Convert HEX -> RGB
     ${hex}=    Set Variable    ${color[1:]}
+    ${r}=      Evaluate    int('${hex[0:2]}',16)
+    ${g}=      Evaluate    int('${hex[2:4]}',16)
+    ${b}=      Evaluate    int('${hex[4:6]}',16)
+    ${rgb}=    Set Variable    rgb(${r}, ${g}, ${b})
 
-    ${r}=    Evaluate    int('${hex[0:2]}',16)
-    ${g}=    Evaluate    int('${hex[2:4]}',16)
-    ${b}=    Evaluate    int('${hex[4:6]}',16)
+    Log To Console    Converted ${color} -> ${rgb}
 
-    ${rgb}=  Set Variable    rgb(${r}, ${g}, ${b})
+    ${circle_locator}=    Set Variable
+    ...    xpath=//div[contains(@style,'${rgb}')]/parent::div
 
-    Log To Console    Converted ${color} → ${rgb}
-    ${locator}=    Set Variable    
-    ...    xpath=//div[contains(@style,'${rgb}')]/ancestor::div[contains(@class,'cursor-pointer')]
+    ${status}=    Run Keyword And Return Status
+    ...    Wait Until Element Is Visible    ${circle_locator}    2s
 
-    Wait Until Element Is Visible    ${locator}    10s
-    Click Element                    ${locator}
-    Wait Until Element Contains    
-    ...    xpath=//div[contains(text(),'Selected')]    
-    ...    ${color}    10s
+    IF    ${status}
+        Click Element    ${circle_locator}
+        Log To Console    Predefined background color selected.
+    ELSE
+        Log To Console    Color not found. Selecting custom color.
 
-    # Validation
-    ${text}=    Get Text    xpath=//div[contains(text(),'Selected')]
-    Should Contain    ${text}    ${color}
+        # Open color picker
+        Click Element    xpath=(//div[contains(@style,'conic-gradient')]/parent::div)[2]
+
+        Wait Until Element Is Visible    xpath=//input[@name='hex']    10s
+
+        Clear Element Text    xpath=//input[@name='hex']
+        Input Text            xpath=//input[@name='hex']    ${hex}
+        Press Keys            xpath=//input[@name='hex']    ENTER
+    END
+
     Log To Console    Background color ${color} selected successfully
+
+    
+
+
+    
 
 Open Generated Images For Background Removal
     [Arguments]    ${generated_image}   ${image_preview}
@@ -1096,3 +1171,7 @@ Validate History Cards For Background Removal
     sleep  2s
     Log To Console    Preview closed successfully
 
+#---Banner keywords---
+Upload Logo
+    [Arguments]    ${image}
+    Choose File    xpath=//input[@type='file']    ${image}

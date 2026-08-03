@@ -10,8 +10,6 @@ Suite Setup    Run Keywords
 ...    Login Setup    https://mysellercentral.com/ai-agents/sign-in    shaheen@kascommerce.com    ++Pass@123
 Suite Teardown   Close Browser
 
-
-
 *** Test Cases ***
 
 1.Verify Login Success And AI-agents Page Loaded
@@ -85,7 +83,7 @@ Suite Teardown   Close Browser
     Verify Wallet Change After Copy   ${COPY_BUTTON}    15 
     Wait Until Page Contains   Image Copied!
 
- 11.Verify Image Regeneration ,Feedback And Download Functionality
+11.Verify Image Regeneration ,Feedback And Download Functionality
     [Documentation]    Validate image regeneration flow with prompt input and submission
     Image Regeneration   ${REGENERATE_BUTTON}  ${CLOSE_PROMPT}  ${INPUT_BOX}  ${SEND_BTN} 
     Feedback For Image   ${GENERATED_IMAGE1}   ${THUMBS_DOWN_BTN1}   ${THUMBS_UP_BTN1}  UP   The background looks natural and complements the product.
